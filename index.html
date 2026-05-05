@@ -70,8 +70,19 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 .tip-box{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.18);border-radius:8px;padding:.65rem .9rem;font-size:.78rem;color:var(--text);line-height:1.55;margin-top:.5rem;}
 .tip-box strong{color:var(--primary);}
 .warn-box{background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-radius:8px;padding:.65rem .9rem;font-size:.78rem;color:#fed7aa;line-height:1.55;margin-top:.5rem;}
+/* COLLAPSIBLE SECTIONS */
+.collapsible{margin-top:1rem;}
+.collapsible summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:.6rem .9rem;border-radius:8px;font-size:.8rem;font-weight:700;user-select:none;transition:background .18s;}
+.collapsible summary::-webkit-details-marker{display:none;}
+.collapsible summary::after{content:'›';font-size:1.1rem;transition:transform .2s;display:inline-block;margin-left:.4rem;}
+.collapsible[open] summary::after{transform:rotate(90deg);}
+.collapsible.resto summary{background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.18);color:var(--gold);}
+.collapsible.resto summary:hover{background:rgba(251,191,36,.10);}
+.collapsible.night summary{background:rgba(192,132,252,.06);border:1px solid rgba(192,132,252,.18);color:var(--purple);}
+.collapsible.night summary:hover{background:rgba(192,132,252,.10);}
+.collapsible .collapsible-body{padding-top:.6rem;}
 /* RESTAURANTS */
-.resto-section{margin-top:1.25rem;}
+.resto-section{margin-top:0;}
 .resto-title{font-size:.82rem;font-weight:700;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.4rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
 .resto-card{background:#070d19;border:1px solid var(--border);border-radius:8px;padding:.75rem;margin-bottom:.45rem;transition:border-color .18s;}
 .resto-card:hover{border-color:rgba(251,191,36,.35);}
@@ -850,28 +861,32 @@ function renderDayContent(key){
     </div>
 
     ${d.restaurants&&d.restaurants.length?`
-    <div class="resto-section">
-      <div class="resto-title">🍽️ Where to Eat</div>
-      ${d.restaurants.map(r=>`
-        <div class="resto-card">
-          <div class="resto-top"><span class="resto-name">${r.name}</span><span class="resto-price">${r.price}</span></div>
-          <div class="resto-type">${r.type} · ${r.location}</div>
-          <div class="resto-desc">${r.desc}</div>
-          ${r.vibes&&r.vibes.length?`<div class="resto-tags">${renderVibes(r.vibes)}</div>`:''}
-        </div>
-      `).join('')}
-    </div>`:''}
+    <details class="collapsible resto">
+      <summary>🍽️ Where to Eat <span style="font-weight:400;font-size:.72rem;opacity:.6;margin-left:.4rem">${d.restaurants.length} options</span></summary>
+      <div class="collapsible-body">
+        ${d.restaurants.map(r=>`
+          <div class="resto-card">
+            <div class="resto-top"><span class="resto-name">${r.name}</span><span class="resto-price">${r.price}</span></div>
+            <div class="resto-type">${r.type} · ${r.location}</div>
+            <div class="resto-desc">${r.desc}</div>
+            ${r.vibes&&r.vibes.length?`<div class="resto-tags">${renderVibes(r.vibes)}</div>`:''}
+          </div>
+        `).join('')}
+      </div>
+    </details>`:''}
 
     ${d.hotels&&d.hotels.length?`
-    <div class="night-card">
-      <div class="night-title">🌙 Where to Stay — ${d.night}</div>
-      ${d.hotels.map(h=>`
-        <div class="hotel-row">
-          <div class="hotel-name">${h.name}</div>
-          <div class="hotel-meta"><span class="hotel-type">${h.type}</span><span class="hotel-price">${h.price}</span></div>
-        </div>
-      `).join('')}
-    </div>`:''}
+    <details class="collapsible night" style="margin-top:.6rem">
+      <summary>🌙 Where to Stay — ${d.night}</summary>
+      <div class="collapsible-body">
+        ${d.hotels.map(h=>`
+          <div class="hotel-row">
+            <div class="hotel-name">${h.name}</div>
+            <div class="hotel-meta"><span class="hotel-type">${h.type}</span><span class="hotel-price">${h.price}</span></div>
+          </div>
+        `).join('')}
+      </div>
+    </details>`:''}
   `;
 }
 
