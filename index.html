@@ -3,22 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇮🇸 Iceland Road Trip — May 2026</title>
+<title>🇮🇸 Luc & Fahad · Iceland · May 2026</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
-:root{--bg:#0a0f1a;--card:#111827;--border:#1e3a5f;--primary:#38bdf8;--accent:#a3e635;--gold:#fbbf24;--purple:#c084fc;--orange:#fb923c;--green:#4ade80;--text:#e2e8f0;--muted:#94a3b8;}
+:root{--bg:#0b0d18;--card:#10141f;--border:#1e3252;--primary:#67c8f0;--accent:#a3e635;--gold:#f8c95a;--purple:#c084fc;--orange:#fb923c;--green:#4ade80;--rose:#f472b6;--text:#edf2f7;--muted:#8896aa;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
-header{background:linear-gradient(135deg,#060d1a 0%,#0d1f3c 50%,#060d1a 100%);padding:1.5rem 2rem;text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(56,189,248,.12) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(163,230,53,.07) 0%,transparent 60%);}
-header h1{font-size:2.2rem;font-weight:800;position:relative;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-header p{color:var(--muted);margin-top:.3rem;font-size:.95rem;position:relative;}
-.aurora{font-size:.78rem;color:var(--purple);margin-top:.2rem;position:relative;letter-spacing:.04em;}
+header{background:linear-gradient(160deg,#07090f 0%,#0e1428 40%,#120a1c 100%);padding:2rem 2rem 1.5rem;text-align:center;border-bottom:1px solid rgba(244,114,182,.15);position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 15% 60%,rgba(103,200,240,.10) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 40%,rgba(244,114,182,.12) 0%,transparent 55%),
+    radial-gradient(ellipse at 50% 100%,rgba(192,132,252,.07) 0%,transparent 50%);}
+.couple-names{font-size:.95rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);position:relative;margin-bottom:.4rem;}
+.couple-names .heart{color:var(--rose);animation:pulse 1.8s ease-in-out infinite;display:inline-block;margin:0 .4rem;font-size:1.1rem;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.28);opacity:.8}}
+header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01em;
+  background:linear-gradient(100deg,var(--primary) 0%,#a78bfa 50%,var(--rose) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.3rem;}
+.tagline{color:var(--muted);font-size:.88rem;position:relative;letter-spacing:.02em;}
+.tagline .sep{color:var(--rose);margin:0 .4rem;opacity:.6;}
+.aurora-tag{font-size:.74rem;color:rgba(244,114,182,.6);margin-top:.35rem;position:relative;letter-spacing:.06em;}
 .tabs{display:flex;overflow-x:auto;background:#050b14;border-bottom:1px solid var(--border);padding:0 1rem;position:sticky;top:0;z-index:200;}
 .tabs::-webkit-scrollbar{height:3px;}.tabs::-webkit-scrollbar-thumb{background:var(--border);}
 .tab-btn{background:none;border:none;color:var(--muted);padding:.85rem 1.1rem;cursor:pointer;white-space:nowrap;font-size:.82rem;font-weight:600;border-bottom:2px solid transparent;transition:all .2s;letter-spacing:.02em;}
-.tab-btn:hover{color:var(--text);}.tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+.tab-btn:hover{color:var(--text);}.tab-btn.active{color:var(--rose);border-bottom-color:var(--rose);}
+.couple-card{background:linear-gradient(135deg,rgba(244,114,182,.08),rgba(103,200,240,.05));border:1px solid rgba(244,114,182,.18);border-radius:12px;padding:.9rem 1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;}
+.couple-avatar{font-size:1.5rem;flex-shrink:0;}
+.couple-card-text h3{font-size:.85rem;font-weight:700;color:var(--rose);margin-bottom:.2rem;}
+.couple-card-text p{font-size:.75rem;color:var(--muted);line-height:1.55;font-style:italic;}
 #mainLayout{display:grid;grid-template-columns:440px 1fr;height:calc(100vh - 130px);}
 #mainLayout.fullwidth{grid-template-columns:1fr;height:auto;}
 .sidebar{overflow-y:auto;padding:1.25rem;border-right:1px solid var(--border);background:var(--card);}
@@ -113,9 +126,10 @@ header p{color:var(--muted);margin-top:.3rem;font-size:.95rem;position:relative;
 </head>
 <body>
 <header>
-  <h1>🇮🇸 Iceland Road Trip</h1>
-  <p>7 days · May 2026 · Couple · ~1,620 km</p>
-  <div class="aurora">☀️ Midnight Sun · Glaciers · Geysers · Black Sand Beaches · Puffins</div>
+  <div class="couple-names">Luc <span class="heart">♥</span> Fahad</div>
+  <h1>🇮🇸 Iceland</h1>
+  <p class="tagline">A Love Story in Ice & Fire<span class="sep">·</span>May 2026<span class="sep">·</span>7 Days<span class="sep">·</span>~1,620 km</p>
+  <div class="aurora-tag">☀️ Midnight Sun &nbsp;·&nbsp; Wild Nature &nbsp;·&nbsp; Glaciers &nbsp;·&nbsp; Black Beaches &nbsp;·&nbsp; Just the Two of Us</div>
 </header>
 <nav class="tabs" id="mainTabs">
   <button class="tab-btn active" onclick="switchTab('overview')">🗺️ Overview</button>
@@ -135,6 +149,19 @@ header p{color:var(--muted);margin-top:.3rem;font-size:.95rem;position:relative;
   <div id="mapContainer"><div id="map"></div></div>
 </div>
 <script>
+// ═══════════════════════════════════════════════
+//  LOVE NOTES (Luc & Fahad)
+// ═══════════════════════════════════════════════
+const DAY_LOVE_NOTES = {
+  day1:{emoji:'💙',note:'Your adventure together begins here. Soak in the milky-blue water and let the road ahead feel magical.'},
+  day2:{emoji:'✨',note:'Waterfalls, geysers, tectonic plates — Iceland will show off today. So will you two.'},
+  day3:{emoji:'🖤',note:'Black beaches, roaring waterfalls and the Atlantic at your feet. Some of the most dramatic scenery on earth — share it.'},
+  day4:{emoji:'🧊',note:'Walking on a glacier, floating in a glacier lagoon — today is genuinely once-in-a-lifetime. And Astrid is waiting in Höfn 🥂'},
+  day5:{emoji:'🌋',note:'The long drive home. Roll down the windows, pick the playlist, let the lava fields go by. Just the two of you.'},
+  day6:{emoji:'🌊',note:'The magical west. The glacier at the tip of the world, Kirkjufell in all its drama. One of Iceland\'s best days.'},
+  day7:{emoji:'🏔️',note:'Last morning in Iceland. Breathe it in. You two did something beautiful here.'},
+};
+
 // ═══════════════════════════════════════════════
 //  DATA
 // ═══════════════════════════════════════════════
@@ -531,8 +558,16 @@ function renderVibes(vibes){
 
 function renderDayContent(key){
   const d=DAYS[key];
+  const ln=DAY_LOVE_NOTES[key];
   const fClasses={easy:'feas-easy',full:'feas-full',tight:'feas-tight'};
   return `
+    ${ln?`<div class="couple-card" style="margin-bottom:.85rem">
+      <div class="couple-avatar">${ln.emoji}</div>
+      <div class="couple-card-text">
+        <h3>Luc ♥ Fahad · Day ${d.num}</h3>
+        <p>${ln.note}</p>
+      </div>
+    </div>`:''}
     <div class="day-badge" style="color:${d.color}">DAY ${d.num}</div>
     <div class="day-title">${d.title}</div>
     <div class="day-subtitle">${d.subtitle}</div>
@@ -597,13 +632,20 @@ function renderOverview(){
     {key:'day7',col:'#ff6b6b',km:'~200 km',stops:'Harpa · Geothermal Pool · Last Lunch · KEF'},
   ];
   return `
+    <div class="couple-card">
+      <div class="couple-avatar">💑</div>
+      <div class="couple-card-text">
+        <h3>Luc & Fahad · Iceland · May 2026</h3>
+        <p>7 days. Two people. One island of fire and ice. A road trip built for wild nature, stolen moments and the kind of golden light that only exists at 11pm in May.</p>
+      </div>
+    </div>
     <div class="day-badge">OVERVIEW</div>
-    <div class="day-title">Iceland Road Trip — 7 Days</div>
-    <div class="day-subtitle">~1,620 km · ~22h driving total · May 2026</div>
+    <div class="day-title">A Love Story in Ice & Fire</div>
+    <div class="day-subtitle">~1,620 km · ~22h driving · May 2026</div>
     <div class="day-meta" style="margin-bottom:1rem"><span class="meta-chip">🚗 Rental car</span><span class="meta-chip">🌤️ 5–14°C</span><span class="meta-chip">☀️ 20–22h daylight</span></div>
     <div class="overview-intro">
-      <strong>Iceland in May:</strong> Near-midnight sun (sunset ~11pm), purple lupins beginning to bloom, puffins returning to the cliffs, Highland F-roads closed (no 4x4 needed), fewer tourists than July–August.<br><br>
-      <strong>Gay couple:</strong> Iceland is top 3 worldwide for LGBT+ acceptance. Zero precautions needed — see the 🏳️‍🌈 tab.
+      <strong>Why May:</strong> Near-midnight sun (sunset ~11pm — golden hour never ends), purple lupins blooming across lava fields, puffins on the cliffs, fewer crowds. The most romantic month to visit Iceland.<br><br>
+      <strong>Iceland for you two:</strong> Top 3 most LGBT+ friendly country in the world. Show affection freely — capital, countryside, remote farms, everywhere. As normal as it gets. See 🏳️‍🌈 for details.
     </div>
     <div>
       ${list.map((d,i)=>{
