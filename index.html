@@ -128,7 +128,7 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 <body>
 <header>
   <div class="couple-names">Luc <span class="heart">♥</span> Fahad</div>
-  <h1>🇮🇸 Iceland Road Trip</h1>
+  <h1>Iceland Road Trip</h1>
   <p class="tagline">May 2026<span class="sep">·</span>7 Days<span class="sep">·</span>~1,620 km<span class="sep">·</span>Ring Road</p>
   <div class="aurora-tag">☀️ Midnight Sun &nbsp;·&nbsp; Glaciers &nbsp;·&nbsp; Black Beaches &nbsp;·&nbsp; Waterfalls &nbsp;·&nbsp; Wild Nature</div>
 </header>
@@ -158,7 +158,7 @@ const DAY_LOVE_NOTES = {
   day2:{emoji:'✨',note:'Waterfalls, geysers, tectonic plates — Iceland will show off today. So will you two.'},
   day3:{emoji:'🖤',note:'Black beaches, roaring waterfalls and the Atlantic at your feet. Some of the most dramatic scenery on earth — share it.'},
   day4:{emoji:'🧊',note:'Walking on a glacier, floating in a glacier lagoon — today is genuinely once-in-a-lifetime. And Astrid is waiting in Höfn 🥂'},
-  day5:{emoji:'🌋',note:'The long drive home. Roll down the windows, pick the playlist, let the lava fields go by. Just the two of you.'},
+  day5:{emoji:'🌋',note:'380 km of lava fields and open road. Windows down, playlist loud. Sleep in Selfoss tonight — Snæfellsnes waits tomorrow.'},
   day6:{emoji:'🌊',note:'The magical west. The glacier at the tip of the world, Kirkjufell in all its drama. One of Iceland\'s best days.'},
   day7:{emoji:'🏔️',note:'Last morning in Iceland. Breathe it in. You two did something beautiful here.'},
 };
@@ -274,6 +274,9 @@ const DAYS = {
       {name:'Skógafoss',icon:'🌈',type:'Waterfall · 62m',coords:[63.532,-19.511],
        desc:'60m-wide, 62m-tall curtain of water with near-permanent rainbow. 527 steps climb to the top for a view over the Skóga river winding across the plain.',
        tags:['must','free'],tip:'Climb the stairs — the upriver view is just as good as the base. 20 min up.'},
+      {name:'Seljavallalaug — Natural Pool',icon:'♨️',type:'Geothermal Pool · 1923',coords:[63.521,-19.566],
+       desc:'Iceland\'s oldest geothermal swimming pool, built in 1923, hidden in a narrow valley. Fed by a hot spring at ~30–35°C. Green mossy walls, mountain views, almost no tourists. 15-min walk from the car park.',
+       tags:['must','free'],tip:'No changing rooms, no fees, no crowds — pure Iceland. Come in the morning before the South Coast buses arrive. Water is warm but not hot — perfect after a hike.'},
       {name:'DC-3 Plane Wreck',icon:'✈️',type:'Photography · Sólheimasandur',coords:[63.459,-19.364],
        desc:'Rusted USAF DC-3 crashed here in 1973 on a vast black lava plain. 4km round-trip walk on black sand. Post-apocalyptic, cinematic, unique.',
        tags:['must','free'],tip:'Park on Route 1 — walking only. 50–70 min round trip.'},
@@ -312,9 +315,9 @@ const DAYS = {
     num:4,color:'#38bdf8',
     title:'Glacier Country',
     subtitle:'Canyon → Glacier Walk → Jökulsárlón → Höfn',
-    km:'~220 km',drive:'~3h (no stops)',night:'Höfn',
+    km:'~280 km',drive:'~3h30 (no stops)',night:'Höfn',
     center:[63.9,-17.0],zoom:8,
-    feasibility:{level:'tight',label:'🔴 Tight — start at 7:30am',note:'This is the most loaded day. Canyon + Svartifoss hike + 3h glacier walk + Jökulsárlón boat + Diamond Beach = ~12h. ⚠️ Make Svartifoss optional (skip if pressed). Book the glacier walk for 11am and leave Vík no later than 7:30am.'},
+    feasibility:{level:'tight',label:'🔴 Tight — start at 7:30am',note:'This is the most loaded day: 280 km + canyon + optional Svartifoss hike + 3h glacier walk + Jökulsárlón boat + Diamond Beach = ~12h on the road. ⚠️ Make Svartifoss optional (skip if pressed). Book the glacier walk for 11am, leave Vík no later than 7:30am.'},
     stops:[
       {name:'Fjaðrárgljúfur — Canyon',icon:'🏞️',type:'Canyon · 9,000 years old',coords:[63.776,-18.172],
        desc:'A 100m-deep canyon carved by glacial meltwater 9,000 years ago. 2km long with ridgeline paths. Made world-famous by a Justin Bieber video. Views from the top only.',
@@ -358,11 +361,11 @@ const DAYS = {
 
   day5:{
     num:5,color:'#fb923c',
-    title:'Long Drive Back to Reykjavik',
-    subtitle:'Höfn → Lava Fields → Waterfalls → Selfoss → Reykjavik',
-    km:'~470 km',drive:'~5h30',night:'Reykjavik',
-    center:[63.9,-19.5],zoom:7,
-    feasibility:{level:'full',label:'🟡 Long drive — leave by 8am',note:'470 km is the longest driving day. Only 3 short stops en route — the goal is to cover ground. Leave Höfn at 8am → arrive Reykjavik by 3:30pm with a free afternoon and evening.'},
+    title:'Drive West — Through the Lava Fields',
+    subtitle:'Höfn → Eldhraun → Kirkjubæjarklaustur → Selfoss',
+    km:'~380 km',drive:'~4h30 (no stops)',night:'Selfoss or Hella',
+    center:[63.85,-19.0],zoom:7,
+    feasibility:{level:'full',label:'🟡 Long drive — leave by 8am',note:'380 km, but you\'ve already seen Reykjavik — no reason to go back. Sleep in Selfoss tonight instead: 80 km shorter, better positioned for Day 6 (Snæfellsnes is 2h north). Leave Höfn at 8am, arrive Selfoss by 1–2pm. Long afternoon to recharge.'},
     stops:[
       {name:'Eldhraun — Lava Moss Fields',icon:'🌿',type:'Volcanic Landscape',coords:[63.700,-18.500],
        desc:'600 km² of lava field from the 1783 Laki eruption, covered in thick velvet moss. Route 1 cuts straight through. Lunar, otherworldly. 20-min stop.',
@@ -373,45 +376,39 @@ const DAYS = {
       {name:'Foss á Síðu',icon:'💦',type:'Upside-Down Waterfall',coords:[63.810,-17.950],
        desc:'A waterfall off a cliff onto Route 1 — in strong onshore wind, the water blows back upward into the sky. Pull over and watch.',
        tags:['free']},
-      {name:'Selfoss — Lunch',icon:'🍽️',type:'Town',coords:[63.932,-21.014],
-       desc:'Lunch stop. Last town before Reykjavik. Bónus supermarket for restocking. Good café options in the centre.',
-       tags:[]},
-      {name:'Reykjavik — Free Evening',icon:'🌆',type:'Capital',coords:[64.147,-21.943],
-       desc:'Back by mid-afternoon. Evening completely free. Mikeller Reykjavik for craft beers, Hurra for live music, or just the midnight sun on Laugavegur.',
+      {name:'Selfoss — Overnight',icon:'🌙',type:'Town · Good base for Day 6',coords:[63.932,-21.014],
+       desc:'Selfoss is a proper Icelandic town with good restaurants and supermarkets. Perfectly positioned for Snæfellsnes the next day — 2h drive north via Borgarnes, no city traffic.',
        tags:[]},
     ],
     restaurants:[
       {name:'Systrakaffi',location:'Kirkjubæjarklaustur',price:'€€',type:'The local café in Klaustur',
        desc:'Soup, lamb stew, coffee. The only real option in the village and genuinely good. Great stop after the lava fields.',
        vibes:['local']},
-      {name:'Kaffi Krús',location:'Selfoss',price:'€',type:'Café — lunch stop',
-       desc:'Reliable lunch spot in Selfoss. Soup and sandwich, coffee, quick and good value.',
+      {name:'Kaffi Krús',location:'Selfoss',price:'€',type:'Café',
+       desc:'Reliable spot in Selfoss. Soup, sandwich, coffee. Good value.',
        vibes:['local','cheap']},
-      {name:'Mikeller Reykjavik',location:'Reykjavik',price:'€€€',type:'Craft beer bar + food',
-       desc:'One of the most beautiful bars in Iceland — set in a converted building with 20 taps of Icelandic and Nordic craft beers. Great burgers and small plates.',
+      {name:'Gott',location:'Selfoss',price:'€€',type:'Best restaurant in Selfoss',
+       desc:'Solid local cooking — lamb, fish, good burgers. Popular with locals and the best dinner option in Selfoss.',
        vibes:['local']},
-      {name:'Kopar',location:'Reykjavik old harbour',price:'€€€€',type:'Seafood with harbour views',
-       desc:'Elegant dinner spot right on the water with views of Mount Esja. Arctic char, langoustine, Icelandic lamb. Perfect for a special evening after the long drive.',
-       vibes:['romantic','upscale']},
+      {name:'Hotel South Coast Restaurant',location:'Selfoss',price:'€€€',type:'Dinner with river views',
+       desc:'The hotel restaurant on the Ölfusá river. Arctic char, lamb shank, good wine list. Quiet evening after a long drive.',
+       vibes:['romantic']},
     ],
     hotels:[
-      {name:'Apotek Hotel Reykjavik',price:'€160–230/night',type:'★★★★ · Former pharmacy · Unique design'},
-      {name:'101 Hotel',price:'€200–290/night',type:'Boutique ★★★★★ · Most stylish in Reykjavik'},
-      {name:'Airbnb Reykjavik Centre',price:'€100–155/night',type:'Tonsinn area · Great location'},
+      {name:'Hotel South Coast',price:'€130–190/night',type:'★★★★ · Selfoss · River views'},
+      {name:'Guesthouse Hella',price:'€85–125/night',type:'Guesthouse · Hella · 30 min east · Quieter'},
+      {name:'Airbnb Selfoss',price:'€80–130/night',type:'Various options · Book early'},
     ]
   },
 
   day6:{
     num:6,color:'#c084fc',
     title:'Snæfellsnes Peninsula',
-    subtitle:'Reykjavik → Borgarnes → Arnarstapi → Kirkjufell → Stykkishólmur',
-    km:'~300 km',drive:'~4h',night:'Stykkishólmur or Grundarfjörður',
+    subtitle:'Selfoss → Arnarstapi → Snæfellsjökull → Lysuhólslaug → Kirkjufell → Stykkishólmur',
+    km:'~360 km',drive:'~5h',night:'Stykkishólmur or Grundarfjörður',
     center:[64.85,-22.9],zoom:9,
-    feasibility:{level:'full',label:'🟡 Full day — leave by 8am',note:'300 km + 6 stops = ~11h on the road. Borgarnes museum is optional (saves 1.5h). The Arnarstapi→Hellnar cliff walk can be shortened to 45 min. Aim to reach Kirkjufell by 6pm for the best evening light.'},
+    feasibility:{level:'full',label:'🟡 Full day — leave by 8am',note:'Selfoss → Snæfellsnes is 2h15 via Borgarnes (Route 1 north, then Route 54). Add 5 stops on the peninsula + Lysuhólslaug pool = arrive Stykkishólmur around 8pm. The Arnarstapi→Hellnar cliff walk can be shortened to 45 min. Aim for Kirkjufell by 7pm for golden light.'},
     stops:[
-      {name:'Borgarnes — Settlement Centre',icon:'🏛️',type:'Museum · Viking Sagas',coords:[64.541,-21.924],
-       desc:'Immersive museum on Iceland\'s Viking settlers via the Sagas (1–1.5h). Models, soundscapes, light design. Optional if running tight on time.',
-       tags:['paid']},
       {name:'Arnarstapi → Hellnar — Coastal Walk',icon:'🌊',type:'Coastal Hike',coords:[64.768,-23.622],
        desc:'Fishing hamlet with basalt cliffs sculpted by the Atlantic. Natural arch Gatklettur. 2.5km walk to Hellnar along the clifftops — rock formations, sea caves, seabirds.',
        tags:['must','free']},
@@ -421,6 +418,9 @@ const DAYS = {
       {name:'Djúpalónssandur',icon:'🖤',type:'Black Pebble Beach',coords:[64.752,-23.896],
        desc:'Black pebble beach with four Viking lifting stones and rusted trawler wreck fragments. Raw and windswept. No posing tourists — just you and the Atlantic.',
        tags:['must','free']},
+      {name:'Lysuhólslaug — Natural Geothermal Pool',icon:'♨️',type:'Natural Pool · Snæfellsnes',coords:[64.829,-23.436],
+       desc:'A small outdoor geothermal pool on the south side of the peninsula — greenish algae-rich water, surrounded by farmland and mountain views. Around 30–34°C. Almost zero tourists. Entry ~€5–10.',
+       tags:['paid'],tip:'One of Iceland\'s best-kept secrets. A 30-min soak here after the coastal walk feels earned. Call ahead to confirm it\'s open: +354 435 6716.'},
       {name:'Kirkjufell & Kirkjufellsfoss',icon:'⛰️',type:'Iceland\'s Most Photographed Mountain',coords:[64.944,-23.305],
        desc:'"Arrowhead Mountain" from Game of Thrones. Unmistakable arrow-shaped peak. Waterfall Kirkjufellsfoss in the foreground = the iconic shot. Late evening light (10pm) turns everything gold.',
        tags:['must','free'],tip:'Come in the late evening. 45 min minimum. Don\'t attempt to climb without a guide.'},
@@ -438,9 +438,6 @@ const DAYS = {
       {name:'Café Lækjarbrekka',location:'Hellnar',price:'€',type:'Coffee & snacks with ocean views',
        desc:'Tiny café at the end of the cliff walk from Arnarstapi. Coffee, soup, pastries. Perfect mid-walk refuel.',
        vibes:['local','cheap']},
-      {name:'Settlement Centre Restaurant',location:'Borgarnes',price:'€€€',type:'Attached to museum',
-       desc:'Excellent lamb and fish dishes in a beautiful, well-designed space. Slightly upscale but worth it for lunch if you\'re doing the museum.',
-       vibes:['upscale']},
       {name:'Sjávarpakkhúsið',location:'Stykkishólmur harbour',price:'€€',type:'Casual harbour fish',
        desc:'More relaxed than Narfeyrarstofa. Good fish and chips, fish soup, local catch of the day. Great if you want something casual and quick.',
        vibes:['local']},
@@ -500,11 +497,21 @@ const DAYS = {
 const ROUTES={
   day1:[[63.985,-22.605],[63.880,-22.449],[64.147,-21.943],[64.142,-21.927]],
   day2:[[64.147,-21.943],[64.255,-20.933],[64.117,-20.733],[64.312,-20.302],[64.327,-20.120],[63.932,-21.014]],
-  day3:[[63.932,-21.014],[63.615,-19.988],[63.621,-19.980],[63.532,-19.511],[63.459,-19.364],[63.405,-19.047],[63.403,-19.128],[63.419,-19.006]],
+  day3:[[63.932,-21.014],[63.615,-19.988],[63.621,-19.980],[63.532,-19.511],[63.521,-19.566],[63.459,-19.364],[63.405,-19.047],[63.403,-19.128],[63.419,-19.006]],
   day4:[[63.419,-19.006],[63.776,-18.172],[63.988,-16.975],[63.993,-16.867],[64.078,-16.230],[64.072,-16.177],[64.253,-15.208]],
-  day5:[[64.253,-15.208],[63.700,-18.500],[63.784,-18.058],[63.810,-17.950],[63.932,-21.014],[64.147,-21.943]],
-  day6:[[64.147,-21.943],[64.541,-21.924],[64.768,-23.622],[64.808,-23.777],[64.752,-23.896],[64.944,-23.305],[64.924,-23.253],[65.071,-22.732]],
+  day5:[[64.253,-15.208],[63.700,-18.500],[63.784,-18.058],[63.810,-17.950],[63.932,-21.014]],
+  day6:[[63.932,-21.014],[64.541,-21.924],[64.768,-23.622],[64.808,-23.777],[64.752,-23.896],[64.829,-23.436],[64.944,-23.305],[65.071,-22.732]],
   day7:[[65.071,-22.732],[64.35,-21.65],[64.150,-21.931],[64.145,-21.924],[64.146,-21.933],[63.985,-22.605]]
+};
+
+const HOTELS_MAP={
+  day1:{coords:[64.147,-21.943],name:'Reykjavik'},
+  day2:{coords:[63.833,-20.400],name:'Hella'},
+  day3:{coords:[63.419,-19.006],name:'Vík'},
+  day4:{coords:[64.253,-15.208],name:'Höfn'},
+  day5:{coords:[63.932,-21.014],name:'Selfoss'},
+  day6:{coords:[65.071,-22.732],name:'Stykkishólmur'},
+  day7:null,
 };
 
 // ═══════════════════════════════════════════════
@@ -514,6 +521,11 @@ const map=L.map('map',{center:[64.6,-19.5],zoom:6,zoomControl:true,attributionCo
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(map);
 let mapLayers=[];
 function clearMap(){mapLayers.forEach(l=>map.removeLayer(l));mapLayers=[];}
+
+function hotelMarker(coords,name){
+  const ic=L.divIcon({html:`<div style="width:26px;height:26px;background:#1e1e2e;border:2px solid #c084fc;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.7)">🌙</div>`,iconSize:[26,26],iconAnchor:[13,13],className:''});
+  return L.marker(coords,{icon:ic}).bindPopup(`<div style="font-family:system-ui"><strong>🌙 ${name}</strong><br><small style="color:#94a3b8">Overnight</small></div>`,{maxWidth:160});
+}
 
 function drawOverview(){
   clearMap();
@@ -528,6 +540,9 @@ function drawOverview(){
     const ic=L.divIcon({html:`<div style="width:24px;height:24px;background:${s.col};border-radius:50%;border:2px solid white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;box-shadow:0 2px 8px rgba(0,0,0,.6)">${s.n}</div>`,iconSize:[24,24],iconAnchor:[12,12],className:''});
     mapLayers.push(L.marker(s.c,{icon:ic}).addTo(map));
   });
+  Object.values(HOTELS_MAP).forEach(h=>{
+    if(h) mapLayers.push(hotelMarker(h.coords,h.name).addTo(map));
+  });
   map.setView([64.5,-19.5],6);
 }
 
@@ -539,6 +554,8 @@ function drawDay(key){
     const ic=L.divIcon({html:`<div style="min-width:24px;height:24px;background:${day.color};border-radius:12px;border:2px solid white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;padding:0 5px;box-shadow:0 2px 8px rgba(0,0,0,.6)">${i+1}</div>`,iconSize:[24,24],iconAnchor:[12,12],className:''});
     mapLayers.push(L.marker(s.coords,{icon:ic}).bindPopup(`<div style="font-family:system-ui;max-width:200px"><strong>${s.name}</strong><br><small style="color:#94a3b8">${s.desc.substring(0,80)}…</small></div>`,{maxWidth:220}).addTo(map));
   });
+  const hotel=HOTELS_MAP[key];
+  if(hotel) mapLayers.push(hotelMarker(hotel.coords,hotel.name).addTo(map));
   map.setView(day.center,day.zoom);
 }
 
