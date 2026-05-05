@@ -562,6 +562,13 @@ function renderDayContent(key){
   const ln=DAY_LOVE_NOTES[key];
   const fClasses={easy:'feas-easy',full:'feas-full',tight:'feas-tight'};
   return `
+    ${ln?`<div class="couple-card" style="margin-bottom:.85rem">
+      <div class="couple-avatar">${ln.emoji}</div>
+      <div class="couple-card-text">
+        <h3>Luc ♥ Fahad · Day ${d.num}</h3>
+        <p>${ln.note}</p>
+      </div>
+    </div>`:''}
     <div class="day-badge" style="color:${d.color}">DAY ${d.num}</div>
     <div class="day-title">${d.title}</div>
     <div class="day-subtitle">${d.subtitle}</div>
