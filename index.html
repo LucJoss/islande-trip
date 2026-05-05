@@ -150,8 +150,8 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 </header>
 <div class="plan-switch">
   <span class="plan-switch-label">Plan :</span>
-  <button class="plan-btn" id="pbtn7" onclick="switchPlan('7')">7 jours · Ring Road Sud</button>
-  <button class="plan-btn" id="pbtn10" onclick="switchPlan('10')">10 jours · Full Ring Road</button>
+  <button class="plan-btn" id="pbtn7" onclick="switchPlan('7')">7 days · Southern Loop</button>
+  <button class="plan-btn" id="pbtn10" onclick="switchPlan('10')">10 days · Full Ring Road</button>
 </div>
 <nav class="tabs" id="mainTabs">
   <button class="tab-btn active" onclick="switchTab('overview')">🗺️ Overview</button>
@@ -539,7 +539,8 @@ const HOTELS_MAP={
 //  10-DAY PLAN DATA (Full Ring Road · May 15–24)
 // ═══════════════════════════════════════════════
 const DAYS10={
-  day1:DAYS.day1, day2:DAYS.day2, day3:DAYS.day3, day4:DAYS.day4,
+  day1:DAYS.day1, day2:DAYS.day2, day3:DAYS.day3,
+  day4:{...DAYS.day4, feasibility:{level:'full',label:'🟡 Full day — take it at your own pace',note:'Same iconic stops, but with 10 days you\'re not in a sprint. Skip Svartifoss if you feel like it, spend an extra hour at Jökulsárlón watching the light change on the icebergs. Book the glacier walk for 10 or 11am. Leave Vík by 8am.'}},
   day5:{
     num:5,color:'#fb923c',
     title:'East Fjords',
@@ -578,7 +579,7 @@ const DAYS10={
     subtitle:'Egilsstaðir → Goðafoss → Dimmuborgir → Hverir → Mývatn Nature Baths',
     km:'~200 km',drive:'~2h30 (no stops)',night:'Mývatn area',
     center:[65.62,-16.90],zoom:10,
-    feasibility:{level:'full',label:'🟡 Full day — 5 stops',note:'200 km, leaving Egilsstaðir at 9am. Goðafoss (~1h stop) is on the way. Spend 4–5h around Mývatn. Plan to arrive at the Nature Baths at 5pm — worth saving the soak for golden light.'},
+    feasibility:{level:'easy',label:'🟢 Take your time — no rush',note:'200 km total, but Mývatn\'s sites are all within 15 min of each other. Leave Egilsstaðir at 9am, stop at Goðafoss on the way (~1h), then spend the rest of the day looping around the lake at whatever pace feels right. Save the Nature Baths for last — arrive at 5pm and stay until sunset.'},
     stops:[
       {name:'Goðafoss — Waterfall of the Gods',icon:'💦',type:'Waterfall · Historic · Year 1000',coords:[65.682,-17.550],
        desc:'In year 1000, the chieftain Þorgeir threw his pagan idols here after Iceland adopted Christianity. 12m wide, 12m tall, crystal clear. One of Iceland\'s most beautiful waterfalls. Stop on both banks.',
@@ -638,63 +639,60 @@ const DAYS10={
   },
   day8:{
     num:8,color:'#c084fc',
-    title:'Drive West — Seals & Snæfellsnes',
-    subtitle:'Akureyri → Hvammstangi (seals) → Borgarnes → Grundarfjörður',
-    km:'~380 km',drive:'~5h (no stops)',night:'Grundarfjörður or Stykkishólmur',
-    center:[65.0,-21.0],zoom:7,
-    feasibility:{level:'full',label:'🟡 Longest day — leave by 8am',note:'380 km, but varied: Arctic coast → seal beach → lava fields → Snæfellsnes arrival. Leave Akureyri 8am → seals 11am → Borgarnes lunch 1:30pm → arrive Grundarfjörður by 4:30pm. Kirkjufell for the evening golden light.'},
+    title:'Seals, Lava & the West',
+    subtitle:'Akureyri → Hvammstangi (seals) → Borgarnes',
+    km:'~260 km',drive:'~3h30 (no stops)',night:'Borgarnes',
+    center:[65.0,-20.5],zoom:7,
+    feasibility:{level:'easy',label:'🟢 Short and scenic — sleep early',note:'Only 260 km today, and half of it is beautiful Arctic coastline. Leave Akureyri at 9am, take your time at the seals, have a real lunch in Borgarnes and arrive with a free afternoon. No rush — Snæfellsnes starts tomorrow.'},
     stops:[
       {name:'Hvammstangi — Seal Coast',icon:'🦭',type:'Wildlife · Seal Center',coords:[65.400,-20.936],
-       desc:'The Vatnsnes peninsula has the highest seal concentration in Iceland — hundreds of harbour seals on the beaches. The Seal Center explains the species. Drive the 50km peninsula loop to Illugastaðir: guaranteed seals within metres of you.',
-       tags:['must','paid'],tip:'Entry ~€10. The loop drive past Illugastaðir adds 45 min and is worth every second.'},
-      {name:'Borgarnes — Lunch stop',icon:'🍽️',type:'Town',coords:[64.541,-21.924],
-       desc:'Good lunch stop before Snæfellsnes. Settlement Centre restaurant or Bónus supermarket to stock up.',
+       desc:'The Vatnsnes peninsula has the highest seal concentration in Iceland. Hundreds of harbour seals lounging on the beaches, completely unbothered by visitors. Drive the loop to Illugastaðir — seals within metres of you.',
+       tags:['must','paid'],tip:'Entry ~€10 for the center. The Illugastaðir loop (50km, 1h) is the highlight — go slow and stop whenever you spot them.'},
+      {name:'Borgarnes — Afternoon to Breathe',icon:'🌙',type:'Town · Overnight',coords:[64.541,-21.924],
+       desc:'A pleasant small town on a peninsula in the fjord. Arrive early afternoon, wander, have a good dinner, sleep well. Tomorrow is Snæfellsnes — your last big day of exploration.',
        tags:[]},
-      {name:'Kirkjufell — Evening Preview',icon:'⛰️',type:'Iceland\'s most photographed mountain',coords:[64.944,-23.305],
-       desc:'Arrive Grundarfjörður with time for a first look at Kirkjufell in the evening light. At 9pm in May it turns completely gold. You\'ll have a full day on the peninsula tomorrow.',
-       tags:['must','free'],tip:'10-min drive from Grundarfjörður centre. Don\'t miss the evening light even if you\'re tired.'},
     ],
     restaurants:[
-      {name:'Settlement Centre Restaurant',location:'Borgarnes',price:'€€€',type:'Best lunch stop en route',desc:'Icelandic lamb and fish in a beautiful space.',vibes:['upscale']},
-      {name:'Hótel Framnes Restaurant',location:'Grundarfjörður',price:'€€',type:'Local dinner',desc:'Solid fish and lamb. The best dinner option in Grundarfjörður with Kirkjufell views.',vibes:['local']},
+      {name:'Settlement Centre Restaurant',location:'Borgarnes',price:'€€€',type:'Best in town',desc:'Excellent lamb and fish in a beautifully designed space. Worth it for a sit-down dinner.',vibes:['upscale','romantic']},
+      {name:'Borgarnes Kaffi',location:'Borgarnes',price:'€€',type:'Casual local café',desc:'Soup, sandwiches, coffee. Great for a relaxed lunch on arrival.',vibes:['local','cheap']},
     ],
     hotels:[
-      {name:'Hótel Framnes',price:'€130–190/night',type:'★★★ · Direct Kirkjufell views'},
-      {name:'Airbnb Grundarfjörður',price:'€90–140/night',type:'Kirkjufell views possible'},
-      {name:'Hotel Egilsen',price:'€150–210/night',type:'Boutique · Stykkishólmur · 30 min east'},
+      {name:'Hotel Borgarnes',price:'€120–170/night',type:'★★★ · Fjord views · Central'},
+      {name:'Guesthouse Borgarnes',price:'€90–130/night',type:'Simple · Good value'},
+      {name:'Airbnb Borgarnes',price:'€80–120/night',type:'Various options'},
     ]
   },
   day9:{
     num:9,color:'#fbbf24',
-    title:'Full Snæfellsnes → Reykjavik',
-    subtitle:'Grundarfjörður → Arnarstapi → Snæfellsjökull → Lysuhólslaug → Kirkjufell → Reykjavik',
-    km:'~280 km',drive:'~4h (no stops)',night:'Reykjavik',
+    title:'Snæfellsnes — All Day, No Rush',
+    subtitle:'Borgarnes → Arnarstapi → Snæfellsjökull → Lysuhólslaug → Kirkjufell → Reykjavik',
+    km:'~310 km',drive:'~4h30 (no stops)',night:'Reykjavik',
     center:[64.85,-22.9],zoom:9,
-    feasibility:{level:'full',label:'🟡 Full day — leave by 8am',note:'Full Snæfellsnes circuit + drive back to Reykjavik. Leave Grundarfjörður at 8am. Peninsula stops by 5pm. Arrive Reykjavik by 8pm. Sleep there — early KEF flight tomorrow at 10:20.'},
+    feasibility:{level:'full',label:'🟡 Full day — but the pace is yours',note:'With a full day on the peninsula and no pressure to be back early, you can actually stop when something is beautiful. Leave Borgarnes at 9am. Do the coastal walk slowly. Soak at Lysuhólslaug. Reach Kirkjufell by 7pm for the golden light. Arrive Reykjavik by 10pm.'},
     stops:[
-      {name:'Arnarstapi → Hellnar — Coastal Walk',icon:'🌊',type:'Coastal Hike',coords:[64.768,-23.622],
-       desc:'Basalt cliffs, natural arch Gatklettur, 2.5km cliff walk to Hellnar. Sea caves, seabirds, Atlantic in full force.',
+      {name:'Arnarstapi → Hellnar — Coastal Walk',icon:'🌊',type:'Coastal Hike · Take your time',coords:[64.768,-23.622],
+       desc:'Basalt sea arches, cliffs sculpted by the Atlantic, 2.5km cliff walk to Hellnar. In the 10-day plan: don\'t rush this one. Stop at Café Lækjarbrekka at Hellnar for coffee with an ocean view.',
+       tags:['must','free'],tip:'Allow 1h30 minimum — the pace is the point.'},
+      {name:'Snæfellsjökull — Glacier Volcano',icon:'🏔️',type:'Glacier · Jules Verne Territory',coords:[64.808,-23.777],
+       desc:'Jules Verne\'s "Journey to the Centre of the Earth" glacier. Stop, stand in front of it, feel how strange it is that you\'re here.',
        tags:['must','free']},
-      {name:'Snæfellsjökull — Glacier Volcano',icon:'🏔️',type:'Glacier · National Park',coords:[64.808,-23.777],
-       desc:'Jules Verne\'s "Journey to the Centre of the Earth" glacier. Visible from Reykjavik 150km away. Eerie, mythical atmosphere.',
+      {name:'Djúpalónssandur — Black Pebble Beach',icon:'🖤',type:'Beach · No crowds',coords:[64.752,-23.896],
+       desc:'Black pebble beach, Viking lifting stones, rusted trawler wreck. Wind, Atlantic, total quiet. Sit on a rock for 10 minutes.',
        tags:['must','free']},
-      {name:'Djúpalónssandur — Black Pebble Beach',icon:'🖤',type:'Beach',coords:[64.752,-23.896],
-       desc:'Black pebble beach with Viking lifting stones and rusted trawler wreck. Raw, windswept, no crowds.',
+      {name:'Lysuhólslaug — Afternoon Soak',icon:'♨️',type:'Natural Geothermal Pool',coords:[64.829,-23.436],
+       desc:'Algae-green water, farmland views, nobody around. ~30–34°C. Plan 1h here — you\'ve earned a proper soak on your last day of exploring.',
+       tags:['paid'],tip:'Call ahead: +354 435 6716. ~€5–10 entry.'},
+      {name:'Kirkjufell — Golden Hour',icon:'⛰️',type:'Iceland\'s Most Photographed Mountain',coords:[64.944,-23.305],
+       desc:'The arrow-shaped peak in the 7–9pm May light. Kirkjufellsfoss waterfall in the foreground. Your last big Iceland view — give it an hour.',
        tags:['must','free']},
-      {name:'Lysuhólslaug — Natural Pool',icon:'♨️',type:'Geothermal Pool',coords:[64.829,-23.436],
-       desc:'Small geothermal pool, algae-green water, farmland and mountain views. Almost zero tourists. ~30–34°C. Entry ~€5–10.',
-       tags:['paid'],tip:'Call ahead: +354 435 6716.'},
-      {name:'Kirkjufell & Kirkjufellsfoss',icon:'⛰️',type:'Iceland\'s Most Photographed Mountain',coords:[64.944,-23.305],
-       desc:'Last big view before driving back. The arrow-shaped peak with the waterfall at 7pm in May light = extraordinary.',
-       tags:['must','free'],tip:'Give it 45 min. 7–9pm light is the best of the trip.'},
-      {name:'Reykjavik — Last Night',icon:'🌆',type:'Capital',coords:[64.147,-21.943],
-       desc:'Back by 8:30pm. Dinner on Laugavegur, last walk by the harbour. Flight is 10:20 tomorrow — set an early alarm.',
+      {name:'Reykjavik — Last Night',icon:'🌆',type:'Capital · Flight tomorrow',coords:[64.147,-21.943],
+       desc:'Arrive around 10pm. One last walk by the harbour if you have the energy. Pool at 6:30am tomorrow, then KEF.',
        tags:[]},
     ],
     restaurants:[
-      {name:'Café Lækjarbrekka',location:'Hellnar',price:'€',type:'Coffee at the cliff walk end',desc:'Coffee, soup, pastries. Mid-walk refuel.',vibes:['local','cheap']},
-      {name:'Sægreifinn',location:'Reykjavik harbour',price:'€€',type:'Last night lobster soup',desc:'One final humarsúpa at the harbour. Perfect closing meal.',vibes:['must','local']},
-      {name:'Matur og Drykkur',location:'Reykjavik',price:'€€€',type:'Farewell dinner',desc:'Best traditional Icelandic cuisine in the city if you have the energy.',vibes:['romantic','upscale']},
+      {name:'Café Lækjarbrekka',location:'Hellnar',price:'€',type:'Coffee with Atlantic views',desc:'At the end of the coastal walk. Soup, coffee, pastries. Sit outside if the weather allows.',vibes:['local','cheap']},
+      {name:'Bjargarsteinn Mathús',location:'Arnarstapi',price:'€€€',type:'Lunch on the cliffs',desc:'Perched on the Arnarstapi cliffs. Local fish and lamb with extraordinary views. Lunch stop.',vibes:['romantic']},
+      {name:'Sægreifinn',location:'Reykjavik harbour',price:'€€',type:'Last lobster soup',desc:'One final humarsúpa. The best way to close the trip.',vibes:['must','local']},
     ],
     hotels:[
       {name:'Canopy by Hilton Reykjavik',price:'€180–260/night',type:'★★★★ · Last night treat'},
@@ -732,8 +730,8 @@ const ROUTES10={
   day5:[[64.253,-15.208],[64.657,-14.282],[65.000,-14.200],[65.262,-14.002],[65.270,-14.395]],
   day6:[[65.270,-14.395],[65.682,-17.550],[65.591,-16.897],[65.626,-16.882],[65.638,-16.823],[65.632,-16.847],[65.641,-16.921]],
   day7:[[65.641,-16.921],[66.044,-17.339],[65.688,-18.093]],
-  day8:[[65.688,-18.093],[65.400,-20.936],[64.541,-21.924],[64.944,-23.305],[65.071,-22.732]],
-  day9:[[65.071,-22.732],[64.768,-23.622],[64.808,-23.777],[64.752,-23.896],[64.829,-23.436],[64.944,-23.305],[64.147,-21.943]],
+  day8:[[65.688,-18.093],[65.400,-20.936],[64.541,-21.924]],
+  day9:[[64.541,-21.924],[64.768,-23.622],[64.808,-23.777],[64.752,-23.896],[64.829,-23.436],[64.944,-23.305],[64.147,-21.943]],
   day10:[[64.147,-21.943],[64.145,-21.924],[64.146,-21.933],[63.985,-22.605]],
 };
 
@@ -742,19 +740,19 @@ const HOTELS_MAP10={
   day5:{coords:[65.270,-14.395],name:'Egilsstaðir'},
   day6:{coords:[65.641,-16.921],name:'Mývatn'},
   day7:{coords:[65.688,-18.093],name:'Akureyri'},
-  day8:{coords:[64.924,-23.253],name:'Grundarfjörður'},
+  day8:{coords:[64.541,-21.924],name:'Borgarnes'},
   day9:{coords:[64.147,-21.943],name:'Reykjavik'},
   day10:null,
 };
 
 const DAY_LOVE_NOTES10={
   day1:DAY_LOVE_NOTES.day1, day2:DAY_LOVE_NOTES.day2, day3:DAY_LOVE_NOTES.day3, day4:DAY_LOVE_NOTES.day4,
-  day5:{emoji:'🌊',note:'The East Fjords — Iceland\'s secret. Fjords plunging into the sea, almost no tourists. Just the open road and you two.'},
-  day6:{emoji:'🌋',note:'Waterfalls, lava castles, sulfur fields and a warm blue pool at sunset. Iceland showing everything it has.'},
-  day7:{emoji:'🐋',note:'A humpback surfaces 20 metres from the boat. Then Akureyri at golden hour. You earned this one.'},
-  day8:{emoji:'🦭',note:'Seals, an empty coast, and then the glacier at the end of the world coming into view. The ring is almost complete.'},
-  day9:{emoji:'🏔️',note:'Last full day. Snæfellsnes, a hidden pool, Kirkjufell at golden hour. Then Reykjavik one last time.'},
-  day10:{emoji:'✈️',note:'Last morning. A hot pot, a coffee, one last look at the mountains. Iceland will stay with you both.'},
+  day5:{emoji:'🌊',note:'The East Fjords — Iceland\'s best-kept secret. Almost no tourists, just fjords and open road. Take it slow today.'},
+  day6:{emoji:'🌋',note:'Steam rising from the earth, lava castles at your feet, and a warm blue pool waiting at the end of the day. No rush.'},
+  day7:{emoji:'🐋',note:'A humpback surfaces 20 metres from the boat. Nothing will prepare you for that. Then a quiet evening in Akureyri.'},
+  day8:{emoji:'🦭',note:'A short day. Seals on the beach, a long lunch, an early night. You\'ve earned some rest. Snæfellsnes tomorrow.'},
+  day9:{emoji:'🏔️',note:'The last full day. No schedule, just the peninsula — cliffs, a glacier, a warm pool, then Kirkjufell at golden hour.'},
+  day10:{emoji:'✈️',note:'Last morning. A hot pot at dawn, a cinnamon roll, one final look at the mountains. Iceland stays with you.'},
 };
 
 // ═══════════════════════════════════════════════
@@ -909,13 +907,13 @@ function renderOverview(){
     {key:'day5',col:'#fb923c',km:'~260 km',stops:'Djúpivogur · East Fjords · Seyðisfjörður · Egilsstaðir'},
     {key:'day6',col:'#4ade80',km:'~200 km',stops:'Goðafoss · Dimmuborgir · Hverir · Mývatn Baths'},
     {key:'day7',col:'#38bdf8',km:'~145 km',stops:'Húsavík Whale Watching · Akureyri'},
-    {key:'day8',col:'#c084fc',km:'~380 km',stops:'Seal Coast · Borgarnes · Grundarfjörður'},
-    {key:'day9',col:'#fbbf24',km:'~280 km',stops:'Arnarstapi · Snæfellsjökull · Lysuhólslaug · Kirkjufell · Reykjavik'},
+    {key:'day8',col:'#c084fc',km:'~260 km',stops:'Seal Coast · Borgarnes — short day, early night'},
+    {key:'day9',col:'#fbbf24',km:'~310 km',stops:'Arnarstapi · Snæfellsjökull · Lysuhólslaug · Kirkjufell · Reykjavik'},
     {key:'day10',col:'#ff6b6b',km:'~50 km',stops:'Sundhollin · Brauð & Co · KEF → LYS'},
   ];
   const list=activePlan==='7'?list7:list10;
   const totalKm=activePlan==='7'?'~1,620 km':'~2,100 km';
-  const planLabel=activePlan==='7'?'7 jours · Ring Road Sud':'10 jours · Full Ring Road · May 15–24';
+  const planLabel=activePlan==='7'?'7 days · Southern Ring Road':'10 days · Full Ring Road · May 15–24';
   return `
     <div class="day-badge">OVERVIEW</div>
     <div class="day-title">Luc & Fahad · Iceland · May 2026</div>
@@ -923,6 +921,7 @@ function renderOverview(){
     <div class="day-meta" style="margin-bottom:1rem"><span class="meta-chip">🚗 Rental car</span><span class="meta-chip">🌤️ 5–14°C</span><span class="meta-chip">☀️ 20–22h daylight</span></div>
     <div class="overview-intro">
       <strong>Why May:</strong> Near-midnight sun (sunset ~11pm — golden hour never ends), purple lupins blooming across lava fields, puffins on the cliffs, fewer crowds. The best month to visit Iceland.<br><br>
+      ${activePlan==='10'?`<strong>10-day philosophy:</strong> This isn't a sprint. Sleep in. Linger at the waterfall. Skip a stop if you're not feeling it. Have a second coffee. The 7-day plan is a highlight reel — this one is a proper road trip. Average 220 km/day vs 230 km in the 7-day plan, but with half the pressure.<br><br>`:''}
       <strong>Iceland for you two:</strong> Top 3 most LGBT+ friendly country in the world. Show affection freely — capital, countryside, remote farms, everywhere. As normal as it gets. See 🏳️‍🌈 for details.
     </div>
     <div>
