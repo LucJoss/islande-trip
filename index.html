@@ -128,9 +128,9 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 <body>
 <header>
   <div class="couple-names">Luc <span class="heart">♥</span> Fahad</div>
-  <h1>🇮🇸 Iceland</h1>
-  <p class="tagline">A Love Story in Ice & Fire<span class="sep">·</span>May 2026<span class="sep">·</span>7 Days<span class="sep">·</span>~1,620 km</p>
-  <div class="aurora-tag">☀️ Midnight Sun &nbsp;·&nbsp; Wild Nature &nbsp;·&nbsp; Glaciers &nbsp;·&nbsp; Black Beaches &nbsp;·&nbsp; Just the Two of Us</div>
+  <h1>🇮🇸 Iceland Road Trip</h1>
+  <p class="tagline">May 2026<span class="sep">·</span>7 Days<span class="sep">·</span>~1,620 km<span class="sep">·</span>Ring Road</p>
+  <div class="aurora-tag">☀️ Midnight Sun &nbsp;·&nbsp; Glaciers &nbsp;·&nbsp; Black Beaches &nbsp;·&nbsp; Waterfalls &nbsp;·&nbsp; Wild Nature</div>
 </header>
 <nav class="tabs" id="mainTabs">
   <button class="tab-btn active" onclick="switchTab('overview')">🗺️ Overview</button>
@@ -562,13 +562,6 @@ function renderDayContent(key){
   const ln=DAY_LOVE_NOTES[key];
   const fClasses={easy:'feas-easy',full:'feas-full',tight:'feas-tight'};
   return `
-    ${ln?`<div class="couple-card" style="margin-bottom:.85rem">
-      <div class="couple-avatar">${ln.emoji}</div>
-      <div class="couple-card-text">
-        <h3>Luc ♥ Fahad · Day ${d.num}</h3>
-        <p>${ln.note}</p>
-      </div>
-    </div>`:''}
     <div class="day-badge" style="color:${d.color}">DAY ${d.num}</div>
     <div class="day-title">${d.title}</div>
     <div class="day-subtitle">${d.subtitle}</div>
@@ -633,19 +626,12 @@ function renderOverview(){
     {key:'day7',col:'#ff6b6b',km:'~200 km',stops:'Harpa · Geothermal Pool · Last Lunch · KEF'},
   ];
   return `
-    <div class="couple-card">
-      <div class="couple-avatar">💑</div>
-      <div class="couple-card-text">
-        <h3>Luc & Fahad · Iceland · May 2026</h3>
-        <p>7 days. Two people. One island of fire and ice. A road trip built for wild nature, stolen moments and the kind of golden light that only exists at 11pm in May.</p>
-      </div>
-    </div>
     <div class="day-badge">OVERVIEW</div>
-    <div class="day-title">A Love Story in Ice & Fire</div>
+    <div class="day-title">Luc & Fahad · Iceland · May 2026</div>
     <div class="day-subtitle">~1,620 km · ~22h driving · May 2026</div>
     <div class="day-meta" style="margin-bottom:1rem"><span class="meta-chip">🚗 Rental car</span><span class="meta-chip">🌤️ 5–14°C</span><span class="meta-chip">☀️ 20–22h daylight</span></div>
     <div class="overview-intro">
-      <strong>Why May:</strong> Near-midnight sun (sunset ~11pm — golden hour never ends), purple lupins blooming across lava fields, puffins on the cliffs, fewer crowds. The most romantic month to visit Iceland.<br><br>
+      <strong>Why May:</strong> Near-midnight sun (sunset ~11pm — golden hour never ends), purple lupins blooming across lava fields, puffins on the cliffs, fewer crowds. The best month to visit Iceland.<br><br>
       <strong>Iceland for you two:</strong> Top 3 most LGBT+ friendly country in the world. Show affection freely — capital, countryside, remote farms, everywhere. As normal as it gets. See 🏳️‍🌈 for details.
     </div>
     <div>
