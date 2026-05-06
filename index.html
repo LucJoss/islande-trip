@@ -141,7 +141,7 @@ const DAY_LOVE_NOTES={
   day7:{emoji:'🌋',note:'The big drive west. Iceland in the rearview as you cross back toward the Atlantic. A peninsula shaped like a fist punching into the ocean. Arrive somewhere completely different.'},
   day8:{emoji:'🏔️',note:'Kirkjufell at dawn — the most photographed mountain in Iceland. A black beach where Viking ships sank. A glacier crater you can walk to the top of. The west coast doing its thing.'},
   day9:{emoji:'⛪',note:'A black church alone on a lava field. Twin rock pillars rising from the sea. Harbour boats, afternoon light, nowhere to be. This is the chill you came for.'},
-  day10:{emoji:'✈️',note:'2h15 to the airport. Easy, beautiful drive. You carry Iceland with you — the gorge, the waterfall behind you, Kirkjufell at dawn. Worth every hour.'},
+  day10:{emoji:'✈️',note:'45 minutes to the airport. You slept near KEF. Réveil 6h, café, route. You carry Iceland with you — le gorge, Kirkjufell at dawn, Búðir dans le silence. Worth every hour.'},
 };
 
 // ═══════════════════════════════════════════════
@@ -386,11 +386,11 @@ const DAYS={
   },
   day9:{
     num:9,color:'#c084fc',
-    title:'Free Day — Snæfellsnes',
-    subtitle:'Búðir · Lóndrangar · Harbour · No agenda',
-    km:'~80 km',drive:'Optional',night:'Stykkishólmur',
+    title:'Free Day — Snæfellsnes → Reykjavik',
+    subtitle:'Búðir · Lóndrangar · Arnarstapi · Drive to Reykjavik evening',
+    km:'~180 km',drive:'Activities + 1h evening drive',night:'Reykjavik (near KEF)',
     center:[64.82,-23.2],zoom:9,
-    feasibility:{level:'easy',label:'🟢 Nothing mandatory — genuinely free',note:'Last full free day of the trip. Nothing is required. Búðir and Lóndrangar are 30–45 min from town, easy and beautiful. Or just stay in Stykkishólmur — walk the harbour, take the lighthouse island boat, read a book in a café.'},
+    feasibility:{level:'full',label:'🟡 Full free day — leave Snæfellsnes by 6pm',note:'✈️ Vol à 9h le lendemain : partez de Stykkishólmur direction Reykjavik en soirée (~1h). Dormez à Reykjavik ou près de KEF. Le matin : 45 min jusqu\'à l\'aéroport, arrivée 7h, vol 9h. Confortable. Ne tentez pas de rester à Stykkishólmur la nuit — 2h15 de route à 4h30 du matin c\'est brutal.'},
     stops:[
       {name:'Búðir — Black Church on a Lava Field',icon:'⛪',type:'Iconic Church · Landscape · Silence',coords:[64.812,-23.380],
        desc:'A small black wooden church standing alone at the edge of a vast lava field, with the glacier behind it and the Atlantic in front. One of the most quietly beautiful things in Iceland. Walk around it. Sit on the lava. Say nothing for a few minutes.',
@@ -402,37 +402,38 @@ const DAYS={
        desc:'Walk the harbour waterfront. Take the short path up to Súgandisey island — a lighthouse and panoramic view of the fjord and mountains. In May: puffins on the cliffs below. 20-min return walk from town.',
        tags:['free'],tip:'The harbour has good ice cream at Nesbrauð bakery. Puffins on the south cliff of Súgandisey from mid-May.'},
       {name:'Nesbrauð Bakery — Morning Ritual',icon:'🥐',type:'Local Bakery · Breakfast',coords:[65.072,-22.738],
-       desc:'Stykkishólmur\'s local bakery. Cardamom bun, fresh bread, coffee. Become a regular for the 3 mornings here.',
+       desc:'Stykkishólmur\'s local bakery. Cardamom bun, fresh bread, coffee. Dernière matinée ici avant de quitter la péninsule ce soir.',
        tags:['must']},
+      {name:'Drive to Reykjavik — Evening',icon:'🚗',type:'1h · Reykjavik or near KEF · Vol à 9h',coords:[64.147,-21.943],
+       desc:'Quittez Snæfellsnes vers 18h. 1h de route jusqu\'à Reykjavik. Dormez en ville ou près de KEF (Keflavík, 45 min de plus). Demain matin : 45 min jusqu\'à l\'aéroport, arrivée à 7h, vol à 9h.',
+       tags:[],tip:'Hótel Keflavík ou Hótel Berg sont à 5 min de KEF si vous voulez zéro stress. Reykjavik centre = Apotek ou Airbnb pour une dernière nuit agréable.'},
     ],
     restaurants:[
-      {name:'Narféyrarstofa',location:'Stykkishólmur',price:'€€€',type:'Last dinner of the trip',desc:'Third and final dinner here. Raise a glass. Order whatever you didn\'t have yet.',vibes:['romantic','upscale','must']},
-      {name:'Nesbrauð Bakery',location:'Stykkishólmur',price:'€',type:'Breakfast · Every morning',desc:'The local bakery. The cardamom bun. Same ritual every morning.',vibes:['local','cheap','must']},
+      {name:'Narféyrarstofa',location:'Stykkishólmur',price:'€€€',type:'Dernier dîner sur la péninsule',desc:'Dînez ici avant de partir vers Reykjavik en soirée. Dernier repas sur Snæfellsnes.',vibes:['romantic','upscale','must']},
+      {name:'Dîner à Reykjavik',location:'Reykjavik',price:'€€–€€€',type:'Si vous arrivez avant 21h',desc:'Retour à Messinn ou Kopar pour une dernière nuit en ville.',vibes:['local']},
     ],
     hotels:[
-      {name:'Same Stykkishólmur accommodation',price:'Night 3 of 3',type:'Last night — pack tonight for tomorrow'},
+      {name:'Hótel Keflavík / Hótel Berg',price:'€100–160/night',type:'Près de KEF · 5 min de l\'aéroport · Option la plus simple'},
+      {name:'Apotek Hotel / Airbnb Reykjavik',price:'€120–200/night',type:'Reykjavik centre · 45 min de KEF · Plus agréable'},
     ]
   },
   day10:{
     num:10,color:'#ff6b6b',
-    title:'Stykkishólmur → KEF — Easy Run Home',
-    subtitle:'~160 km · 2h15 · via Borgarnes · Duty Free',
-    km:'~160 km',drive:'~2h15',night:'Flight home',
-    center:[64.3,-22.2],zoom:8,
-    feasibility:{level:'easy',label:'🟢 Most relaxed departure day possible — 2h15 to KEF',note:'Comfortable for any flight time after noon. For a morning flight: leave 6am, arrive 8:15am. Even for a 10am flight it\'s tight but possible. Check your flight time — but for once, departure day isn\'t stressful.'},
+    title:'KEF — Vol 9h · Retour',
+    subtitle:'Départ depuis Reykjavik · 45 min de route · Check-in 7h',
+    km:'~45 km',drive:'~45 min',night:'Flight home',
+    center:[64.0,-22.3],zoom:9,
+    feasibility:{level:'easy',label:'🟢 Départ tranquille — vous dormez près de KEF',note:'Vous avez dormi à Reykjavik ou près de KEF la veille. Réveil 6h, à l\'aéroport à 6h45–7h. Drop car, check-in, duty free. Vol 9h. Pas de stress.'},
     stops:[
-      {name:'Nesbrauð — Last Iceland Breakfast',icon:'🥐',type:'Bakery · Final ritual',coords:[65.072,-22.738],
-       desc:'One last cardamom bun before the drive south. Take one for the road.',
-       tags:['must']},
-      {name:'Deildartunguhver — Optional Hot Spring',icon:'♨️',type:'Europe\'s Largest Hot Spring · 20 min detour',coords:[64.688,-21.408],
-       desc:'The most powerful hot spring in Europe — boiling water flowing at 180 litres per second, surrounded by steam clouds. 20-min detour from Route 1 near Borgarnes. Worth it if you have time before your flight.',
-       tags:['free'],tip:'Free to visit from outside (viewing area). Takes 20 min. Only do this with an afternoon flight.'},
-      {name:'KEF Airport — Home',icon:'✈️',type:'Return · Duty Free',coords:[63.985,-22.605],
-       desc:'Duty free on the departure side: Brennivín schnapps (~€15), local craft beer, cheaper than anywhere in the city. Return the car. Check in. You did something extraordinary.',
-       tags:[],tip:'Brennivín makes the best souvenir. 70cl for ~€15 in duty free. Buy one for yourselves, one for whoever picks you up.'},
+      {name:'Reykjavik → KEF',icon:'🚗',type:'45 min · Dernier trajet',coords:[64.147,-21.943],
+       desc:'Réveil 6h. Café rapide à l\'hôtel. 45 min de route jusqu\'à KEF via Route 41. Retournez la voiture au terminal — prévoir 30 min pour ça.',
+       tags:[],tip:'Retour voiture : suivre les panneaux "Car Rental Return" à KEF. Vous avez le temps même en partant à 6h15.'},
+      {name:'KEF Airport — Home',icon:'✈️',type:'Duty Free · Dernier souvenir',coords:[63.985,-22.605],
+       desc:'Duty free côté départ : Brennivín (~€15 le 70cl), bières locales, moins cher que partout en ville. Check-in, embarquement. Vous avez fait quelque chose d\'extraordinaire.',
+       tags:[],tip:'Brennivín = le meilleur souvenir. Un pour vous, un pour qui vous récupère.'},
     ],
     restaurants:[
-      {name:'KEF Airport café',location:'Departures',price:'€€',type:'Last Iceland bite',desc:'Nothing exciting, but it\'s Iceland. Grab a skyr. Look at the lava fields through the window.',vibes:['local']},
+      {name:'Café de l\'hôtel',location:'Reykjavik / près de KEF',price:'€',type:'Petit dej rapide avant la route',desc:'Simple. Café et toast. Vous êtes sur le départ.',vibes:['local']},
     ],
     hotels:[]
   },
@@ -450,8 +451,8 @@ const ROUTES={
   day6:[[63.419,-19.006],[63.403,-19.128],[63.776,-18.172],[63.419,-19.006]],
   day7:[[63.419,-19.006],[64.147,-21.943],[64.538,-21.924],[64.800,-23.000],[64.769,-23.628],[65.070,-22.735]],
   day8:[[65.070,-22.735],[64.941,-23.307],[64.749,-23.916],[64.822,-23.763],[65.070,-22.735]],
-  day9:[[65.070,-22.735],[64.812,-23.380],[64.727,-23.756],[64.769,-23.628],[65.070,-22.735]],
-  day10:[[65.070,-22.735],[64.688,-21.408],[64.538,-21.924],[63.985,-22.605]],
+  day9:[[65.070,-22.735],[64.812,-23.380],[64.727,-23.756],[64.769,-23.628],[65.070,-22.735],[64.147,-21.943]],
+  day10:[[64.147,-21.943],[63.985,-22.605]],
 };
 
 // ═══════════════════════════════════════════════
@@ -592,13 +593,13 @@ function renderOverview(){
     {key:'day6',col:'#fb923c',km:'~90 km',stops:'Reynisfjara · Fjaðrárgljúfur Canyon · midnight beach'},
     {key:'day7',col:'#4ade80',km:'~350 km',stops:'Drive west · Borgarnes · Arnarstapi → Stykkishólmur'},
     {key:'day8',col:'#38bdf8',km:'~130 km',stops:'Kirkjufell · Djúpalónssandur · Saxhóll crater'},
-    {key:'day9',col:'#c084fc',km:'~80 km',stops:'Búðir black church · Lóndrangar pillars · harbour chill'},
-    {key:'day10',col:'#ff6b6b',km:'~160 km',stops:'Stykkishólmur → KEF · 2h15 · easy departure'},
+    {key:'day9',col:'#c084fc',km:'~180 km',stops:'Búðir · Lóndrangar · Arnarstapi → drive Reykjavik soir'},
+    {key:'day10',col:'#ff6b6b',km:'~45 km',stops:'Reykjavik → KEF 45 min · vol 9h · retour'},
   ];
   return `
     <div class="day-badge">OVERVIEW</div>
     <div class="day-title">Luc & Fahad · Iceland · May 2026</div>
-    <div class="day-subtitle">10 days · 4 bases · ~1,170 km total</div>
+    <div class="day-subtitle">10 days · 4 bases · ~1,300 km total</div>
     <div class="day-meta" style="margin-bottom:1rem">
       <span class="meta-chip">🏨 4 places to book</span>
       <span class="meta-chip">🌤️ 5–14°C</span>
@@ -607,7 +608,7 @@ function renderOverview(){
     <div class="overview-intro">
       <strong>The structure:</strong> Base camps, not daily moves. Book 4 accommodations — Reykjavik (2 nights), Þórsmörk (2 nights), Vík (2 nights), Stykkishólmur (3 nights). Wake up in the same place. Leave bags. Explore. Come home.<br><br>
       <strong>Þórsmörk is the highlight:</strong> A highland valley between three glaciers, accessible only by super-jeep. The gorge, the hike, the hot tub — it's the kind of place people go back to.<br><br>
-      <strong>Snæfellsnes is the chill:</strong> 3 nights in Stykkishólmur, a charming harbour town. Kirkjufell at dawn, Búðir black church, Djúpalónssandur Viking beach, a glacier Jules Verne put at the centre of the Earth. The west coast — completely different from the south. And KEF is 2h15 away: easiest departure of any Iceland trip.<br><br>
+      <strong>Snæfellsnes is the chill:</strong> 3 nights in Stykkishólmur. Kirkjufell at dawn, Búðir black church, Djúpalónssandur Viking beach. D9 soir : 1h de route vers Reykjavik pour dormir près de KEF. D10 matin : 45 min jusqu'à l'aéroport, vol 9h. Parfait.<br><br>
       <strong>Iceland for you two:</strong> Top 3 most LGBT+ friendly country in the world. Show affection freely everywhere — city, farms, highland valleys. See 🏳️‍🌈 for details.
     </div>
     <div>
