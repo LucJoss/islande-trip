@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇮🇸 Luc & Fahad · Iceland · May 2026</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇸</text></svg>">
+<title>🌋 Luc & Fahad · Iceland · May 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌋</text></svg>">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
@@ -33,19 +33,17 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 .couple-avatar{font-size:1.5rem;flex-shrink:0;}
 .couple-card-text h3{font-size:.85rem;font-weight:700;color:var(--rose);margin-bottom:.2rem;}
 .couple-card-text p{font-size:.75rem;color:var(--muted);line-height:1.55;font-style:italic;}
-#mainLayout{display:grid;grid-template-columns:440px 1fr;height:calc(100vh - 130px);}
+#mainLayout{display:grid;grid-template-columns:440px 1fr;height:calc(100vh - 115px);}
 #mainLayout.fullwidth{grid-template-columns:1fr;height:auto;}
 .sidebar{overflow-y:auto;padding:1.25rem;border-right:1px solid var(--border);background:var(--card);}
 .sidebar::-webkit-scrollbar{width:4px;}.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
 #mainLayout.fullwidth .sidebar{overflow-y:visible;border-right:none;}
 #map{width:100%;height:100%;background:#050b14;}
-/* DAY HEADER */
 .day-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.2rem .7rem;border-radius:999px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;background:var(--border);color:var(--primary);}
 .day-title{font-size:1.35rem;font-weight:700;margin-bottom:.2rem;line-height:1.3;}
 .day-subtitle{color:var(--muted);font-size:.82rem;}
 .day-meta{display:flex;gap:.75rem;margin-top:.6rem;flex-wrap:wrap;}
 .meta-chip{font-size:.75rem;color:var(--muted);display:flex;align-items:center;gap:.3rem;}
-/* FEASIBILITY */
 .feasibility{display:flex;align-items:flex-start;gap:.6rem;padding:.65rem .9rem;border-radius:8px;font-size:.78rem;line-height:1.55;margin:.8rem 0;}
 .feasibility .icon{font-size:1rem;flex-shrink:0;margin-top:.05rem;}
 .feasibility p{margin:0;}
@@ -56,7 +54,6 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 .feas-full strong{color:var(--gold);}
 .feas-tight{background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.28);color:#fed7aa;}
 .feas-tight strong{color:var(--orange);}
-/* STOP CARDS */
 .stop-card{background:#070d19;border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem;margin-bottom:.6rem;cursor:pointer;transition:all .18s;position:relative;overflow:hidden;}
 .stop-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--stop-color,var(--primary));}
 .stop-card:hover{border-color:var(--primary);transform:translateX(3px);}
@@ -70,7 +67,6 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 .tip-box{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.18);border-radius:8px;padding:.65rem .9rem;font-size:.78rem;color:var(--text);line-height:1.55;margin-top:.5rem;}
 .tip-box strong{color:var(--primary);}
 .warn-box{background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-radius:8px;padding:.65rem .9rem;font-size:.78rem;color:#fed7aa;line-height:1.55;margin-top:.5rem;}
-/* COLLAPSIBLE SECTIONS */
 .collapsible{margin-top:1rem;}
 .collapsible summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:.6rem .9rem;border-radius:8px;font-size:.8rem;font-weight:700;user-select:none;transition:background .18s;}
 .collapsible summary::-webkit-details-marker{display:none;}
@@ -81,9 +77,6 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 .collapsible.night summary{background:rgba(192,132,252,.06);border:1px solid rgba(192,132,252,.18);color:var(--purple);}
 .collapsible.night summary:hover{background:rgba(192,132,252,.10);}
 .collapsible .collapsible-body{padding-top:.6rem;}
-/* RESTAURANTS */
-.resto-section{margin-top:0;}
-.resto-title{font-size:.82rem;font-weight:700;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.4rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
 .resto-card{background:#070d19;border:1px solid var(--border);border-radius:8px;padding:.75rem;margin-bottom:.45rem;transition:border-color .18s;}
 .resto-card:hover{border-color:rgba(251,191,36,.35);}
 .resto-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.2rem;}
@@ -98,12 +91,8 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 .vibe.cheap{background:rgba(74,222,128,.12);color:var(--green);}
 .vibe.upscale{background:rgba(251,191,36,.12);color:var(--gold);}
 .vibe.must{background:rgba(251,146,60,.15);color:var(--orange);}
-/* NIGHT CARD */
-.night-card{background:rgba(192,132,252,.06);border:1px solid rgba(192,132,252,.18);border-radius:10px;padding:1rem;margin-top:1.25rem;}
-.night-title{display:flex;align-items:center;gap:.45rem;font-weight:600;color:var(--purple);margin-bottom:.6rem;font-size:.85rem;}
 .hotel-row{padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.05);}.hotel-row:last-child{border-bottom:none;}
 .hotel-name{font-weight:500;font-size:.83rem;}.hotel-meta{display:flex;justify-content:space-between;margin-top:.15rem;}.hotel-type{color:var(--muted);font-size:.72rem;}.hotel-price{color:var(--gold);font-size:.75rem;font-weight:600;}
-/* OVERVIEW */
 .overview-intro{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:1rem;margin-bottom:1rem;font-size:.8rem;line-height:1.6;}
 .overview-intro strong{color:var(--primary);}
 .day-overview-card{background:#070d19;border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.85rem;cursor:pointer;transition:all .18s;}
@@ -112,7 +101,6 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 .day-ov-info h3{font-size:.88rem;font-weight:600;}.day-ov-info p{font-size:.73rem;color:var(--muted);margin-top:.1rem;}
 .feas-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .drive-info{margin-left:auto;text-align:right;flex-shrink:0;}.drive-km{font-weight:700;color:var(--primary);font-size:.82rem;}
-/* FULL-WIDTH */
 .section-wrap{padding:1.5rem 2rem;max-width:1100px;margin:0 auto;}
 .section-title{font-size:1.4rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem;}
 .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:.85rem;}
@@ -133,639 +121,353 @@ header h1{font-size:2.4rem;font-weight:900;position:relative;letter-spacing:-.01
 .lgbt-hero h2{font-size:1.4rem;font-weight:700;margin-bottom:.4rem;}
 .lgbt-hero p{color:var(--muted);font-size:.82rem;max-width:580px;margin:0 auto;line-height:1.6;}
 .rainbow-bar{height:4px;border-radius:2px;background:linear-gradient(90deg,#ff4d4d,#ff9f43,#ffd93d,#6bcb77,#4d96ff,#c44dff);margin:.9rem auto;max-width:180px;}
+/* CHOICE DAY */
+.choice-intro{background:linear-gradient(135deg,rgba(192,132,252,.08),rgba(251,191,36,.05));border:1px solid rgba(192,132,252,.25);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1.1rem;font-size:.8rem;line-height:1.65;}
+.choice-intro strong{color:var(--purple);}
+.option-card{border-radius:12px;padding:1rem 1.1rem;margin-bottom:.9rem;border:2px solid transparent;cursor:default;transition:border-color .2s;}
+.option-card.recommended{border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.04);}
+.option-card.b{border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.04);}
+.option-card.c{border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.04);}
+.option-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.6rem;gap:.5rem;}
+.option-title{font-size:1rem;font-weight:700;}
+.option-badge{font-size:.65rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;white-space:nowrap;}
+.option-badge.rec{background:rgba(74,222,128,.2);color:var(--green);}
+.option-badge.alt{background:rgba(56,189,248,.15);color:var(--primary);}
+.option-badge.farm{background:rgba(251,191,36,.15);color:var(--gold);}
+.option-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.7rem;}
+.option-chip{font-size:.7rem;padding:.18rem .55rem;border-radius:5px;background:var(--border);color:var(--muted);}
+.option-desc{font-size:.79rem;color:var(--muted);line-height:1.58;margin-bottom:.7rem;}
+.option-pros{font-size:.77rem;line-height:1.6;}
+.option-pros li{padding-left:1rem;position:relative;color:var(--muted);}
+.option-pros li::before{content:'✓';position:absolute;left:0;font-size:.7rem;}
+.option-pros li strong{color:var(--text);}
+.option-warn{margin-top:.55rem;font-size:.75rem;padding:.5rem .7rem;border-radius:7px;background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.2);color:#fed7aa;}
 @media(max-width:900px){#mainLayout{grid-template-columns:1fr;height:auto;}#mainLayout .sidebar{max-height:none;border-right:none;}#map{height:380px;}}
-.plan-switch{background:#030a12;border-bottom:2px solid var(--border);padding:.5rem 1.25rem;display:flex;align-items:center;gap:.5rem;}
-.plan-switch-label{font-size:.7rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-right:.3rem;white-space:nowrap;}
-.plan-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:.3rem .95rem;cursor:pointer;font-size:.75rem;font-weight:700;border-radius:6px;transition:all .2s;letter-spacing:.02em;}
-.plan-btn:hover{border-color:var(--primary);color:var(--text);}
-.plan-btn.active{background:rgba(103,200,240,.12);border-color:var(--primary);color:var(--primary);}
 </style>
 </head>
 <body>
 <header>
   <div class="couple-names">Luc <span class="heart">♥</span> Fahad</div>
   <h1>Iceland Road Trip</h1>
-  <p class="tagline">May 2026<span class="sep">·</span>7 Days<span class="sep">·</span>~1,620 km<span class="sep">·</span>Ring Road</p>
-  <div class="aurora-tag">☀️ Midnight Sun &nbsp;·&nbsp; Glaciers &nbsp;·&nbsp; Black Beaches &nbsp;·&nbsp; Waterfalls &nbsp;·&nbsp; Wild Nature</div>
+  <p class="tagline">May 2026<span class="sep">·</span>10 Days<span class="sep">·</span>Reykjavik · Þórsmörk · Vík · ?</p>
+  <div class="aurora-tag">☀️ Midnight Sun &nbsp;·&nbsp; Glaciers &nbsp;·&nbsp; Black Beaches &nbsp;·&nbsp; Highland Valleys &nbsp;·&nbsp; Wild Nature</div>
 </header>
-<div class="plan-switch">
-  <span class="plan-switch-label">Plan :</span>
-  <button class="plan-btn" id="pbtn7" onclick="switchPlan('7')">7 days · Southern Loop</button>
-  <button class="plan-btn" id="pbtn10" onclick="switchPlan('10')">10 days · Full Ring Road</button>
-</div>
-<nav class="tabs" id="mainTabs">
-  <button class="tab-btn active" onclick="switchTab('overview')">🗺️ Overview</button>
-  <button class="tab-btn" onclick="switchTab('day1')">D1 · Arrival</button>
-  <button class="tab-btn" onclick="switchTab('day2')">D2 · Golden Circle</button>
-  <button class="tab-btn" onclick="switchTab('day3')">D3 · South Coast</button>
-  <button class="tab-btn" onclick="switchTab('day4')">D4 · Glaciers</button>
-  <button class="tab-btn" onclick="switchTab('day5')">D5 · Drive Back</button>
-  <button class="tab-btn" onclick="switchTab('day6')">D6 · Snæfellsnes</button>
-  <button class="tab-btn" onclick="switchTab('day7')">D7 · Departure</button>
-  <button class="tab-btn" onclick="switchTab('tips')">💡 Tips</button>
-  <button class="tab-btn" onclick="switchTab('budget')">💰 Budget</button>
-  <button class="tab-btn" onclick="switchTab('lgbt')">🏳️‍🌈 LGBT+</button>
-</nav>
+<nav class="tabs" id="mainTabs"></nav>
 <div id="mainLayout">
   <div class="sidebar" id="sidebar"></div>
   <div id="mapContainer"><div id="map"></div></div>
 </div>
 <script>
 // ═══════════════════════════════════════════════
-//  LOVE NOTES (Luc & Fahad)
+//  LOVE NOTES
 // ═══════════════════════════════════════════════
-const DAY_LOVE_NOTES = {
-  day1:{emoji:'💙',note:'Your adventure together begins here. Soak in the milky-blue water and let the road ahead feel magical.'},
-  day2:{emoji:'✨',note:'Waterfalls, geysers, tectonic plates — Iceland will show off today. So will you two.'},
-  day3:{emoji:'🖤',note:'Black beaches, roaring waterfalls and the Atlantic at your feet. Some of the most dramatic scenery on earth — share it.'},
-  day4:{emoji:'🧊',note:'Walking on a glacier, floating in a glacier lagoon — today is genuinely once-in-a-lifetime. And Astrid is waiting in Höfn 🥂'},
-  day5:{emoji:'🌋',note:'380 km of lava fields and open road. Windows down, playlist loud. Sleep in Selfoss tonight — Snæfellsnes waits tomorrow.'},
-  day6:{emoji:'🌊',note:'The magical west. The glacier at the tip of the world, Kirkjufell in all its drama. One of Iceland\'s best days.'},
-  day7:{emoji:'🏔️',note:'Last morning in Iceland. Breathe it in. You two did something beautiful here.'},
+const DAY_LOVE_NOTES={
+  day1:{emoji:'💙',note:'It starts here. Blue water, mineral steam, Iceland spreading out in every direction. Let the road ahead feel magical.'},
+  day2:{emoji:'🏙️',note:'Reykjavik at your own pace. No agenda. Pools, a bakery, the harbour at golden hour. Let the city come to you.'},
+  day3:{emoji:'🏔️',note:'Þórsmörk. Three glaciers, a river valley, birch forests, and almost no one else. Getting here is half the adventure.'},
+  day4:{emoji:'🌿',note:'A full day in the valley with no plan. Hike when you feel like it. Sit by the river when you don\'t. This is what Iceland looks like when you slow down.'},
+  day5:{emoji:'💦',note:'Two of Iceland\'s most iconic waterfalls on the way south. Then the black beach, the sea stacks, and a night in Vík.'},
+  day6:{emoji:'🖤',note:'Reynisfjara in the morning. Fjaðrárgljúfur in the afternoon. Black, wild, volcanic. Iceland at its most dramatic.'},
+  choose:{emoji:'🧭',note:'Four days. No agenda. Choose the place that calls to you — and let Iceland deliver the rest.'},
 };
 
 // ═══════════════════════════════════════════════
-//  DATA
+//  DAYS DATA
 // ═══════════════════════════════════════════════
-const DAYS = {
+const DAYS={
   day1:{
     num:1,color:'#ff6b6b',
     title:'Arrival · Blue Lagoon · Reykjavik',
-    subtitle:'KEF → Blue Lagoon → Reykjavik',
+    subtitle:'KEF → Blue Lagoon → Hallgrímskirkja → Old Harbour',
     km:'~50 km',drive:'~1h',night:'Reykjavik',
     center:[64.02,-22.15],zoom:10,
-    feasibility:{level:'easy',label:'🟢 Relaxed day',note:'~50 km total. Arrival day built to decompress. Get through the airport by 10am, Blue Lagoon by 11am, Reykjavik by 3pm — you\'ll have a full evening to explore the city.'},
+    feasibility:{level:'easy',label:'🟢 Relaxed arrival day',
+      note:'~50 km total. Get through the airport, Blue Lagoon by 11am, Reykjavik by 3pm — a full evening to wander.'},
     stops:[
-      {name:'Keflavík Airport (KEF)',icon:'✈️',type:'Transport',coords:[63.985,-22.605],
-       desc:'You\'ve landed. Pick up your rental car directly at the terminal — book in advance. Grab a local SIM card (Síminn or Nova) at the arrivals hall.',
-       tags:['book'],tip:'Blue Car Rental, Hertz and Lagoon are most reliable at KEF. Always take SCDW + Gravel Insurance. Budget €700–1,100 for 7 days fully covered.'},
-      {name:'Blue Lagoon',icon:'🌊',type:'Geothermal Spa · 10 min from KEF',coords:[63.880,-22.449],
-       desc:'The world\'s most famous geothermal lagoon — water at 38–40°C. Float, decompress, drink wine in the milky-blue water. The white silica face mask is mandatory. Right on the way to Reykjavik — zero detour.',
-       tags:['must','book','paid'],tip:'⚠️ BOOK 4–6 WEEKS AHEAD for May. Comfort Package (bathrobe + drink) €80–100/pers. Arrive at 7am opening to beat tour groups. In-water swim-up bar exists.'},
-      {name:'Hallgrímskirkja',icon:'⛪',type:'Landmark · City Centre',coords:[64.142,-21.927],
-       desc:'The rocket-shaped concrete church dominating the skyline. Tower lift (€6) for 360° views over coloured rooftops, the bay and mountains. Architect Guðjón Samúelsson was inspired by basalt lava columns.',
-       tags:['must','paid']},
-      {name:'Laugavegur & Skólavörðustígur',icon:'🛍️',type:'Main Street',coords:[64.146,-21.933],
-       desc:'Reykjavik\'s main artery: design shops, bars, cafés, galleries. Rainbow flags everywhere — the whole city is openly inclusive. Perfect first evening wander.',
+      {name:'Keflavík Airport (KEF)',icon:'✈️',type:'Arrival',coords:[63.985,-22.605],
+       desc:'Pick up the rental car at the terminal. Get the Super Cover + Gravel Protection — it matters. SIM card at the Síminn kiosk if needed.',
+       tags:[],tip:'Pre-book your car 6–8 weeks ahead. Blue Car Rental, Hertz and Lagoon are the most reliable at KEF.'},
+      {name:'Blue Lagoon — Arrival Soak',icon:'🧖',type:'Geothermal Spa · World Famous',coords:[63.880,-22.449],
+       desc:'Milky-blue silica-rich water at 37–39°C, set in a black lava field. Book the Comfort Package — silica mask, algae mask, and a towel included. The perfect decompression after the flight.',
+       tags:['must','book','paid'],tip:'Book at bluelagoon.com 4–6 weeks ahead. Arrives ~30 min after KEF pickup. 2–2.5h is ideal. Swimwear in a bag from the flight.'},
+      {name:'Hallgrímskirkja — The Rocket Church',icon:'⛪',type:'Architecture · City View',coords:[64.142,-21.927],
+       desc:'Iceland\'s most iconic building — a 73m concrete church shaped like a basalt column. Take the tower elevator for a panoramic view of the city, the bay and the snowcapped mountains.',
+       tags:['paid'],tip:'Tower entry ~€10. Go around 7–9pm for the best golden light on the city.'},
+      {name:'Old Harbour — First Night Walk',icon:'⚓',type:'Harbour · Sunset · Dinner',coords:[64.151,-21.955],
+       desc:'Walk the old harbour at golden hour. The Harpa concert hall glows. Choose a restaurant along the water. This is your first Icelandic evening — take it slow.',
        tags:['free']},
     ],
     restaurants:[
-      {name:'Sægreifinn',location:'Reykjavik harbour',price:'€€',type:'Fisherman\'s canteen',
-       desc:'The lobster soup (humarsúpa) here is one of the defining food experiences of Iceland. Queue outside is normal. Cash and cards both accepted. No reservations.',
-       vibes:['must','local']},
-      {name:'Matur og Drykkur',location:'Reykjavik',price:'€€€',type:'Traditional Icelandic reinvented',
-       desc:'Geothermal rye bread, smoked lamb, sour skyr, salt cod. The most thoughtful take on Icelandic cuisine in the city. Intimate space, great for a couple.',
-       vibes:['romantic','upscale']},
-      {name:'Fiskmarkaðurinn',location:'Reykjavik centre',price:'€€€€',type:'Upscale seafood',
-       desc:'The "Fish Market" — sushi-influenced Icelandic seafood in a beautiful space. One of the top tables in the country. Book ahead.',
-       vibes:['romantic','upscale']},
-      {name:'Snaps Bistro',location:'Þórsgata, Reykjavik',price:'€€€',type:'French-Icelandic bistro',
-       desc:'Relaxed neighbourhood bistro with a strong wine list and solid French-inflected cooking. Very popular with locals.',
-       vibes:['romantic','local']},
-      {name:'Bæjarins Beztu Pylsur',location:'Harbour, Reykjavik',price:'€',type:'Legendary hot dog stand',
-       desc:'Open since 1937. A hot dog with everything (mustard, remoulade, raw & crispy onions) is 450 ISK. Obama ate one here. Non-negotiable snack.',
-       vibes:['cheap','must','local']},
-      {name:'Brauð & Co',location:'Frakkastígur, Reykjavik',price:'€',type:'Best bakery in Iceland',
-       desc:'Cinnamon rolls, sourdough, croissants — queue out the door every morning for a reason. Perfect breakfast before a long drive day.',
-       vibes:['local','cheap']},
+      {name:'Messinn',location:'Old Harbour',price:'€€€',type:'Fish pan · Best intro to Icelandic food',desc:'Cast-iron pan of whatever\'s freshest: cod, trout, langoustine. The signature dish. Book ahead.',vibes:['must','upscale','local']},
+      {name:'Sægreifinn — Green Shack',location:'Old Harbour',price:'€€',type:'Lobster soup · Iconic',desc:'Humarsúpa in a green harbour shack. Iceland\'s most famous €10 bowl of soup. Also try the whale skewer if curious.',vibes:['must','local','cheap']},
+      {name:'Grillmarkaðurinn',location:'City centre',price:'€€€€',type:'Best restaurant in Reykjavik',desc:'If you want to splurge on night one — reindeer, arctic char, langoustine. Extraordinary quality.',vibes:['romantic','upscale']},
     ],
     hotels:[
-      {name:'Canopy by Hilton Reykjavik',price:'€180–260/night',type:'★★★★ · Icelandic design · harbour views'},
-      {name:'Centerhotel Plaza',price:'€130–190/night',type:'★★★ · Great value · city centre'},
-      {name:'Airbnb on Laugavegur',price:'€100–160/night',type:'Design apartments · Book 6 weeks ahead'},
+      {name:'Canopy by Hilton Reykjavik',price:'€180–260/night',type:'★★★★ · Design hotel · Central'},
+      {name:'Apotek Hotel',price:'€160–230/night',type:'★★★★ · Converted pharmacy · Unique'},
+      {name:'Airbnb Reykjavik Centre',price:'€100–160/night',type:'Apartment · Book 3 nights together'},
     ]
   },
-
   day2:{
     num:2,color:'#fbbf24',
-    title:'The Golden Circle',
-    subtitle:'Þingvellir → Geysir → Gullfoss → Selfoss',
-    km:'~230 km',drive:'~3h30 (no stops)',night:'Selfoss or Hella',
-    center:[64.18,-20.45],zoom:9,
-    feasibility:{level:'easy',label:'🟢 Comfortable',note:'Leave Reykjavik by 8:30am. The three main stops are 20–30 min apart — Iceland\'s most visited route is also the most logistically forgiving. Fontana Spa is optional: skip if you\'d rather push on.'},
+    title:'Reykjavik — Your Day',
+    subtitle:'Pools · Laugavegur · Harbour · Golden Hour',
+    km:'~15 km',drive:'Walking only',night:'Reykjavik',
+    center:[64.147,-21.943],zoom:13,
+    feasibility:{level:'easy',label:'🟢 No agenda — the city at your pace',
+      note:'No car needed today. Reykjavik is best on foot. Sleep in. The pools open at 6:30am if you\'re up — or 10am if you\'re not.'},
     stops:[
-      {name:'Þingvellir — UNESCO National Park',icon:'🏔️',type:'Geology · History',coords:[64.255,-20.933],
-       desc:'The world\'s oldest parliament (930 AD) on the rift valley between Eurasian and North American tectonic plates. The Almannagjá gorge is 7 km long. Stunning view from Hakid overlook.',
-       tags:['must','free'],tip:'Option: snorkelling in the Silfra fissure (€120–150/pers, water at 2°C, 100m visibility). Book with Dive.is. Unique on Earth — you float between two continents.'},
-      {name:'Laugarvatn Fontana',icon:'♨️',type:'Geothermal Spa · Lakeside',coords:[64.117,-20.733],
-       desc:'Natural geothermal baths on Lake Laugarvatn — hot pots, lakeside sauna, mountain views. More authentic and cheaper than the Blue Lagoon. 2h stop.',
-       tags:['paid'],tip:'Entrance ~€30. Skip if you did the Blue Lagoon on Day 1 and want to save time.'},
-      {name:'Geysir — Strokkur',icon:'💦',type:'Geothermal',coords:[64.312,-20.302],
-       desc:'Strokkur erupts every 5–10 min, shooting 20–40m into the air. The original Geysir (which gave the word to all languages) is dormant since 2000. Fumaroles and boiling pools to explore around it.',
-       tags:['must','free'],tip:'Stand upwind. The dome of blue water that forms just before the blast is your cue to shoot. Wait 2–3 eruptions for the perfect angle.'},
-      {name:'Gullfoss — The Golden Waterfall',icon:'🌊',type:'Waterfall',coords:[64.327,-20.120],
-       desc:'Two-tiered waterfall (11m + 21m) on the Hvítá river. Flow up to 140 m³/s. Permanent rainbow in the mist on sunny days. In May, snowmelt swells it to peak volume.',
-       tags:['must','free'],tip:'Two viewpoints — lower (you get drenched, worth it) and upper (full picture). Waterproof jacket essential.'},
+      {name:'Laugardalslaug — The Locals\' Pool',icon:'🏊',type:'Geothermal Pool · Social Heart of Reykjavik',coords:[64.143,-21.879],
+       desc:'Iceland\'s biggest pool complex: six hot pots from 38–44°C, cold plunge, outdoor lap pool. Not the Blue Lagoon — better. This is where real Reykjavik happens. An hour minimum.',
+       tags:['must','paid'],tip:'Entry ~€8. Morning is the best time — locals before work. Nude shower required (mandatory by law, completely normal).'},
+      {name:'Hallgrímskirkja Area — Morning Walk',icon:'⛪',type:'Architecture · Neighbourhood',coords:[64.142,-21.927],
+       desc:'Walk up Skólavörðustígur street to the church. The neighbourhood around it — Þingholt — is Reykjavik\'s most charming: painted corrugated iron houses, cats, cafés.',
+       tags:['free']},
+      {name:'Laugavegur — Wander & Shop',icon:'🛍️',type:'Main Street · Cafés · Souvenirs',coords:[64.145,-21.934],
+       desc:'Iceland\'s main shopping street. Browse for a lopapeysa (wool sweater), Brennivín, skyr, local design. The Handknitting Association has the real thing. Kolaportið flea market on weekends.',
+       tags:[]},
+      {name:'Old Harbour — Afternoon & Dinner',icon:'⚓',type:'Harbour · Cafés · Sunset',coords:[64.151,-21.955],
+       desc:'Walk to the harbour for sunset (around 10:30–11pm in May). Watch the mountains across the bay turn pink. Dinner at the water.',
+       tags:['free']},
     ],
     restaurants:[
-      {name:'Gott',location:'Selfoss town',price:'€€',type:'Casual local restaurant',
-       desc:'Solid, unpretentious cooking using local ingredients. Go-to spot for locals in Selfoss. Good burgers and lamb dishes.',
-       vibes:['local']},
-      {name:'Kaffi Krús',location:'Selfoss centre',price:'€',type:'Cosy café',
-       desc:'Soup, sandwiches, coffee in a warm low-key setting. Great for lunch between Golden Circle stops.',
-       vibes:['local','cheap']},
-      {name:'Hotel Rangá Restaurant',location:'Near Hella',price:'€€€€',type:'Upscale romantic dinner',
-       desc:'One of the best restaurants in South Iceland. Outstanding lamb and Arctic char in a beautifully designed lodge setting. Book ahead for dinner.',
-       vibes:['romantic','upscale']},
-      {name:'Fontana Café',location:'Laugarvatn',price:'€€',type:'Café attached to spa',
-       desc:'Geothermal rye bread baked underground, pulled out fresh and served with butter. A uniquely Icelandic lunch if you stop at Fontana.',
-       vibes:['local']},
+      {name:'Brauð & Co',location:'Frakkastígur',price:'€',type:'Best bakery in Iceland · Breakfast',desc:'Cinnamon roll, cardamom bun, coffee. The legendary morning stop. Sit in the window with your coffee.',vibes:['must','local','cheap']},
+      {name:'Café Babalu',location:'Skólavörðustígur',price:'€€',type:'Quirky colourful café · Lunch',desc:'Eccentric and charming — soup of the day, sandwiches, homemade cakes. Near Hallgrímskirkja.',vibes:['local','cheap']},
+      {name:'Kopar',location:'Old Harbour',price:'€€€€',type:'Dinner · Best harbour view',desc:'Langoustine bisque, local fish, excellent wine. The best dinner view in Reykjavik. Book ahead.',vibes:['romantic','upscale','must']},
     ],
     hotels:[
-      {name:'Hotel South Coast',price:'€130–190/night',type:'★★★★ · Selfoss · River views'},
-      {name:'Guesthouse Hella',price:'€85–125/night',type:'Guesthouse · Better placed for Day 3'},
-      {name:'Airbnb Selfoss / Hella',price:'€80–130/night',type:'Various local options'},
+      {name:'Same Reykjavik accommodation',price:'Night 2 of 2',type:'No checkout — stay and enjoy the city'},
     ]
   },
-
   day3:{
     num:3,color:'#4ade80',
-    title:'South Coast — Waterfalls & Black Beaches',
-    subtitle:'Seljalandsfoss → Skógafoss → Reynisfjara → Vík',
-    km:'~150 km',drive:'~2h30 (no stops)',night:'Vík',
-    center:[63.53,-19.65],zoom:9,
-    feasibility:{level:'easy',label:'🟢 One of the best days',note:'Leave Hella at 9am and you\'ll reach Vík by 4pm with all stops done comfortably. Only 150 km. Arguably the most spectacular day of the entire trip.'},
+    title:'Reykjavik → Þórsmörk',
+    subtitle:'Hvolsvöllur → Þórsmörk by super-jeep · Stakkholtsgjá Gorge',
+    km:'~150 km + super-jeep',drive:'~2h30 driving + 40min jeep',night:'Þórsmörk (Húsadalur)',
+    center:[63.68,-19.5],zoom:10,
+    feasibility:{level:'full',label:'🟡 Full arrival day — super-jeep required',
+      note:'You cannot drive to Þórsmörk in a rental car — multiple unbridged glacial river crossings. Take the super-jeep shuttle from Hvolsvöllur (40 min, runs daily in summer). Park your car at Hvolsvöllur. Alternatively, book Reykjavik Excursions bus-jeep from BSÍ terminal (3h direct, no car park needed). Book the shuttle ahead.'},
     stops:[
-      {name:'Seljalandsfoss',icon:'💦',type:'Waterfall · Walk Behind It',coords:[63.615,-19.988],
-       desc:'60m waterfall you can walk behind — a rare experience. The path goes behind the curtain of water through a wet cave. Ground can be icy in May mornings.',
-       tags:['must','free'],tip:'Waterproof jacket + waterproof shoes required. Free. Allow 30 min.'},
-      {name:'Gljúfrabúi — Hidden Waterfall',icon:'🕳️',type:'Secret Waterfall',coords:[63.621,-19.980],
-       desc:'200m from Seljalandsfoss — a 40m waterfall completely hidden inside a narrow gorge. Wade through an ankle-deep stream to reach it. Almost no tourists. Magical.',
-       tags:['must','free'],tip:'Most tourists miss it entirely. 5 min from the car park. Don\'t.'},
-      {name:'Skógafoss',icon:'🌈',type:'Waterfall · 62m',coords:[63.532,-19.511],
-       desc:'60m-wide, 62m-tall curtain of water with near-permanent rainbow. 527 steps climb to the top for a view over the Skóga river winding across the plain.',
-       tags:['must','free'],tip:'Climb the stairs — the upriver view is just as good as the base. 20 min up.'},
-      {name:'Seljavallalaug — Natural Pool',icon:'♨️',type:'Geothermal Pool · 1923',coords:[63.521,-19.566],
-       desc:'Iceland\'s oldest geothermal swimming pool, built in 1923, hidden in a narrow valley. Fed by a hot spring at ~30–35°C. Green mossy walls, mountain views, almost no tourists. 15-min walk from the car park.',
-       tags:['must','free'],tip:'No changing rooms, no fees, no crowds — pure Iceland. Come in the morning before the South Coast buses arrive. Water is warm but not hot — perfect after a hike.'},
-      {name:'DC-3 Plane Wreck',icon:'✈️',type:'Photography · Sólheimasandur',coords:[63.459,-19.364],
-       desc:'Rusted USAF DC-3 crashed here in 1973 on a vast black lava plain. 4km round-trip walk on black sand. Post-apocalyptic, cinematic, unique.',
-       tags:['must','free'],tip:'Park on Route 1 — walking only. 50–70 min round trip.'},
-      {name:'Reynisfjara — Black Sand Beach',icon:'🖤',type:'Beach · Wild Nature',coords:[63.405,-19.047],
-       desc:'Iceland\'s most famous black beach. Hexagonal basalt columns, sea stacks Reynisdrangar, puffin cliffs in May. Waves are unpredictable and deadly.',
-       tags:['must','free'],warn:'⚠️ DEADLY: "Sneaker waves" arrive without warning and have killed tourists. NEVER turn your back to the ocean. Stay 30m+ from the water at all times.'},
-      {name:'Dyrhólaey — Arch & Lighthouse',icon:'🦜',type:'Cliffs · Puffins',coords:[63.403,-19.128],
-       desc:'Volcanic promontory with a sea arch and lighthouse. Panoramic coastal views. Puffins return to the cliffs in May — best season to spot them.',
-       tags:['must','free'],tip:'May close during nesting season (mid-May+). Check road.is in the morning.'},
-      {name:'Vík',icon:'🏘️',type:'Village · Overnight',coords:[63.419,-19.006],
-       desc:'300-person village — the most southerly town in Iceland. Red church on the hill overlooking Reynisfjara. More photogenic than it is a "city" — but the perfect base for the night.',
-       tags:[]},
+      {name:'Hvolsvöllur — Park & Transfer',icon:'🚌',type:'Transfer point · Super-jeep',coords:[63.750,-20.233],
+       desc:'Drive from Reykjavik to Hvolsvöllur (~1h30 on Route 1). Park at the super-jeep operator lot. Board the shuttle — the "bus" that crosses multiple rivers to reach the valley. The crossing itself is impressive.',
+       tags:['book'],tip:'Book with Þórsmörk Adventures or Highland Adventures. Daily departures ~9am, 11am, 1pm (summer). ~€25/person each way. Return the following morning.'},
+      {name:'Þórsmörk — Valley of Thor',icon:'🏔️',type:'Highland Valley · UNESCO candidate',coords:[63.682,-19.519],
+       desc:'A glacially carved valley hemmed in by three glaciers: Eyjafjallajökull (the famous one), Mýrdalsjökull and Tindfjallajökull. Birch forests, wildflowers, glacial rivers. One of Iceland\'s most beautiful and least-visited places. Almost no tourists compared to the south coast.',
+       tags:['must','free']},
+      {name:'Stakkholtsgjá Gorge',icon:'🌿',type:'Gorge Hike · 1h30 return',coords:[63.698,-19.500],
+       desc:'A narrow mossy gorge with a hidden waterfall at the end. The path follows the river into the rock — ferns dripping, canyon walls closing in, absolute silence. One of Iceland\'s most magical short hikes.',
+       tags:['must','free'],tip:'~6km round trip from Húsadalur camp. Easy trail, 1h30–2h. Go in the afternoon after settling in.'},
     ],
     restaurants:[
-      {name:'Suður-Vík',location:'Vík village',price:'€€',type:'Local favourite',
-       desc:'The main restaurant in Vík. Icelandic lamb, fish of the day, thick soups. Honest, local and warm. The best dinner option in the village.',
-       vibes:['local','must']},
-      {name:'Halldórskaffi',location:'Vík',price:'€€',type:'Cosy small café',
-       desc:'Tiny spot run by locals. Simple food, great atmosphere, very few tourists. More of a coffee stop but does light meals.',
-       vibes:['local']},
-      {name:'Black Beach Restaurant',location:'Reynisfjara car park',price:'€€€',type:'Tourist restaurant with views',
-       desc:'Conveniently placed right at the beach. Quality is decent — good for lunch between the beach and Dyrhólaey. Busy in high season.',
-       vibes:[]},
-      {name:'Skógafoss Snack Bar',location:'Base of Skógafoss',price:'€',type:'Fuel stop',
-       desc:'Grab coffee and a lamb sandwich before climbing the 527 steps. Nothing fancy, but exactly what you need.',
-       vibes:['cheap']},
+      {name:'Volcano Huts Restaurant',location:'Húsadalur · Þórsmörk',price:'€€€',type:'On-site camp restaurant',desc:'Hearty soup, lamb stew, Icelandic classics. The only option in the valley — but surprisingly good. Order the lamb. Eat early, the kitchen closes at 9pm.',vibes:['local']},
     ],
     hotels:[
-      {name:'Hotel Katla by Keahotels',price:'€150–220/night',type:'★★★★ · Views of Mýrdalsjökull glacier'},
-      {name:'The Barn',price:'€110–170/night',type:'Design guesthouse · Very instagrammable'},
-      {name:'Guesthouse Carina',price:'€80–120/night',type:'Simple & clean · Best value'},
+      {name:'Volcano Huts — Húsadalur',price:'€120–180/night',type:'Glamping pods / private cabins · Hot tub on-site · Book way ahead'},
+      {name:'Langidalur Mountain Huts',price:'€50–80/night',type:'Basic huts · FÍ membership discount · More remote'},
     ]
   },
-
   day4:{
     num:4,color:'#38bdf8',
-    title:'Glacier Country',
-    subtitle:'Canyon → Glacier Walk → Jökulsárlón → Höfn',
-    km:'~280 km',drive:'~3h30 (no stops)',night:'Höfn',
-    center:[63.9,-17.0],zoom:8,
-    feasibility:{level:'tight',label:'🔴 Tight — start at 7:30am',note:'This is the most loaded day: 280 km + canyon + optional Svartifoss hike + 3h glacier walk + Jökulsárlón boat + Diamond Beach = ~12h on the road. ⚠️ Make Svartifoss optional (skip if pressed). Book the glacier walk for 11am, leave Vík no later than 7:30am.'},
+    title:'Free Day — Þórsmörk',
+    subtitle:'Valahnúkur · Goðaland · River walks · Hot tub',
+    km:'~15 km',drive:'Hiking only',night:'Þórsmörk (Húsadalur)',
+    center:[63.685,-19.51],zoom:11,
+    feasibility:{level:'easy',label:'🟢 Do as much or as little as you want',
+      note:'No car, no schedule. The valley is yours. Valahnúkur takes 2h and gives you the most spectacular 360° view in south Iceland. Or don\'t — sit by the river with a coffee. The hot tub at Volcano Huts is open all day.'},
     stops:[
-      {name:'Fjaðrárgljúfur — Canyon',icon:'🏞️',type:'Canyon · 9,000 years old',coords:[63.776,-18.172],
-       desc:'A 100m-deep canyon carved by glacial meltwater 9,000 years ago. 2km long with ridgeline paths. Made world-famous by a Justin Bieber video. Views from the top only.',
-       tags:['must','free'],tip:'Access via Route 206 (unpaved, fine in May). Can close after heavy rain — check road.is.'},
-      {name:'Svartifoss (optional)',icon:'🖤',type:'Waterfall · Vatnajökull Park',coords:[63.988,-16.975],
-       desc:'Black basalt column waterfall in Vatnajökull National Park. 3.5km round trip hike. Beautiful — but optional if the day is already packed.',
+      {name:'Valahnúkur — 360° View of Three Glaciers',icon:'⛰️',type:'Viewpoint Hike · 2h round trip',coords:[63.692,-19.530],
+       desc:'The signature hike from Húsadalur. A steep but short ascent to a peak with a panoramic view of Eyjafjallajökull, Mýrdalsjökull, Tindfjallajökull, the birch forest below, and the glacial rivers threading through the valley. You\'ll understand why this valley is called Þórsmörk.',
+       tags:['must','free'],tip:'2h round trip, ~400m elevation gain in parts. Go early for the best light. Bring water. The summit is narrow — take turns at the edge.'},
+      {name:'Goðaland — Lava Field Walk',icon:'🌑',type:'Lava Landscape · Easy Stroll',coords:[63.675,-19.502],
+       desc:'The "Land of the Gods" — bizarre black lava formations just west of Húsadalur. Easy walking on marked paths through otherworldly shapes. Where the Laugavegur trail ends.',
+       tags:['free'],tip:'30 min walk from camp. Combine with Stakkholtsgjá if you have the energy.'},
+      {name:'Krossá River — Afternoon Wander',icon:'🌊',type:'Glacial River · Valley Floor',coords:[63.682,-19.495],
+       desc:'Walk along the braided glacial river channels on the valley floor. The water is turquoise from glacial silt. Sit on a rock and watch the glacier above. This is the most peaceful 30 minutes on the trip.',
        tags:['free']},
-      {name:'Svínafellsjökull — Glacier Walk',icon:'🧊',type:'Guided Glacier Hike · BOOK NOW',coords:[63.993,-16.867],
-       desc:'3 hours on Europe\'s largest glacier. Blue ice, crevasses, ice mills. Crampons, ice axe and helmet provided by the guide. No experience required.',
-       tags:['must','book','paid'],tip:'Book with Glacier Guides or Icelandic Mountain Guides. ~€70–90/person. Book for 11am slot. SELLS OUT IN MAY.'},
-      {name:'Jökulsárlón — Glacier Lagoon',icon:'💙',type:'Glacial Lagoon',coords:[64.078,-16.230],
-       desc:'Iceland\'s crown jewel. Blue icebergs calve from the glacier and drift toward the sea, some the size of a house. Seals lounge on the ice. At 10–11pm in May, the golden light on blue ice is surreal.',
-       tags:['must','free'],tip:'Amphibious boat tour (~€50/pers) gets you right up close to the icebergs. Allow 1.5h minimum on site.'},
-      {name:'Diamond Beach',icon:'💎',type:'Black Sand Beach',coords:[64.072,-16.177],
-       desc:'200m from the lagoon across Route 1. Chunks of transparent glacial ice wash up on black sand like scattered diamonds. Every visit is unique — the ice changes constantly.',
-       tags:['must','free']},
-      {name:'Höfn — Lobster, Astrid & Night',icon:'🦞',type:'Town · Food · Friends',coords:[64.253,-15.208],
-       desc:'Iceland\'s lobster capital. Your friend Astrid lives here — the perfect excuse for a local evening. The town sits on Hornafjörður fjord with glacier views. Sunrise on Vatnajökull from the pier is worth waking up for.',
-       tags:['paid'],tip:'📍 Astrid lives here — reach out before the trip to plan dinner or a drink together. A local friend in a remote Icelandic town is a rare privilege, don\'t miss it.'},
+      {name:'Volcano Huts Hot Tub',icon:'♨️',type:'Hot Tub · After Hiking',coords:[63.682,-19.519],
+       desc:'The outdoor hot tub at camp, overlooking the valley and the glacier face. Use it at 7pm when the day cools and the light goes amber. A glass of something cold.',
+       tags:['paid'],tip:'Included for guests or ~€10 for day visitors. Evening is the best time — 7–9pm.'},
     ],
     restaurants:[
-      {name:'Humarsetur',location:'Höfn harbour',price:'€€€',type:'THE lobster restaurant',
-       desc:'Langoustine (humar) every which way — grilled, in soup, in a burger. This is the restaurant that made Höfn famous. Consistently excellent. Book a table.',
-       vibes:['must','upscale']},
-      {name:'Pakkhúsið',location:'Höfn',price:'€€€',type:'Lobster & local fish',
-       desc:'Slightly more casual than Humarsetur but just as good. Beautiful old warehouse space. Go for the lobster tails with garlic butter.',
-       vibes:['romantic','upscale']},
-      {name:'Hafnarbuðin',location:'Höfn harbour',price:'€€',type:'Casual harbour café',
-       desc:'Sandwiches, fish soup, coffee — the local lunch spot. Nothing fancy but authentic and cheap.',
-       vibes:['local','cheap']},
-      {name:'Ósinn',location:'Höfn',price:'€€',type:'Local favourite',
-       desc:'Where the people of Höfn actually eat. Good fish of the day, lobster pasta, solid value. Often missed by tourists.',
-       vibes:['local']},
+      {name:'Volcano Huts Restaurant',location:'Húsadalur',price:'€€€',type:'Dinner at camp',desc:'Same as last night — lamb stew or fish, good beer. Sit outside if the weather allows. Watch the glaciers in the evening light.',vibes:['local']},
     ],
     hotels:[
-      {name:'Fosshotel Vatnajökull',price:'€170–260/night',type:'★★★★ · Glacier views · Exceptional'},
-      {name:'Höfn Guesthouse',price:'€100–150/night',type:'Guesthouse · Town centre'},
-      {name:'Airbnb Höfn',price:'€90–140/night',type:'Various options · Book early'},
+      {name:'Same Þórsmörk accommodation',price:'Night 2 of 2',type:'No checkout — full free day in the valley'},
     ]
   },
-
   day5:{
-    num:5,color:'#fb923c',
-    title:'Drive West — Through the Lava Fields',
-    subtitle:'Höfn → Eldhraun → Kirkjubæjarklaustur → Selfoss',
-    km:'~380 km',drive:'~4h30 (no stops)',night:'Selfoss or Hella',
-    center:[63.85,-19.0],zoom:7,
-    feasibility:{level:'full',label:'🟡 Long drive — leave by 8am',note:'380 km, but you\'ve already seen Reykjavik — no reason to go back. Sleep in Selfoss tonight instead: 80 km shorter, better positioned for Day 6 (Snæfellsnes is 2h north). Leave Höfn at 8am, arrive Selfoss by 1–2pm. Long afternoon to recharge.'},
+    num:5,color:'#c084fc',
+    title:'Þórsmörk → Vík',
+    subtitle:'Seljalandsfoss · Skógafoss · Seljavallalaug → Vík',
+    km:'~180 km',drive:'~3h (no stops)',night:'Vík',
+    center:[63.55,-20.0],zoom:9,
+    feasibility:{level:'easy',label:'🟢 Comfortable driving day via iconic waterfalls',
+      note:'Take the morning super-jeep back from Þórsmörk to Hvolsvöllur (~40 min). Collect your car. Then Route 1 east through two of Iceland\'s most famous waterfalls. Arrive Vík mid-afternoon.'},
     stops:[
-      {name:'Eldhraun — Lava Moss Fields',icon:'🌿',type:'Volcanic Landscape',coords:[63.700,-18.500],
-       desc:'600 km² of lava field from the 1783 Laki eruption, covered in thick velvet moss. Route 1 cuts straight through. Lunar, otherworldly. 20-min stop.',
-       tags:['must','free'],warn:'⚠️ NEVER walk on the moss — it takes decades to grow back. Stay on the roadside.'},
-      {name:'Kirkjubæjarklaustur — Kirkjugólf',icon:'🧩',type:'Geological Curiosity',coords:[63.784,-18.058],
-       desc:'"Church floor" — natural hexagonal basalt pavement that looks human-made. Stjórnarfoss waterfall just behind. 30-min stop.',
-       tags:['free']},
-      {name:'Foss á Síðu',icon:'💦',type:'Upside-Down Waterfall',coords:[63.810,-17.950],
-       desc:'A waterfall off a cliff onto Route 1 — in strong onshore wind, the water blows back upward into the sky. Pull over and watch.',
-       tags:['free']},
-      {name:'Selfoss — Overnight',icon:'🌙',type:'Town · Good base for Day 6',coords:[63.932,-21.014],
-       desc:'Selfoss is a proper Icelandic town with good restaurants and supermarkets. Perfectly positioned for Snæfellsnes the next day — 2h drive north via Borgarnes, no city traffic.',
+      {name:'Super-jeep Back to Hvolsvöllur',icon:'🚌',type:'Transfer · Morning departure',coords:[63.750,-20.233],
+       desc:'Book the 8am or 9am shuttle back from Þórsmörk to Hvolsvöllur. Collect your car, get a coffee, then head east on Route 1.',
+       tags:['book'],tip:'Book return the night before at camp. 40 min, same price as coming. Be at the jeep 5 min early.'},
+      {name:'Seljalandsfoss — Walk Behind the Water',icon:'💦',type:'Waterfall · Walk Behind It',coords:[63.615,-19.988],
+       desc:'One of Iceland\'s most unique waterfalls — a path loops behind the curtain of water. 60m drop, emerald moss. You will get misted. Don\'t skip Gljúfrabúi — a hidden waterfall in a cave 5 min north along the same cliff.',
+       tags:['must','free'],tip:'Walk behind it — you\'ll get soaked if it\'s windy. Go anyway. 45 min with the full loop.'},
+      {name:'Skógafoss — The Mighty One',icon:'🌊',type:'Waterfall · Rainbow',coords:[63.532,-19.511],
+       desc:'60m wide, 60m tall. One of the most powerful waterfalls in Iceland. Climb the 370 steps to the top for a full valley view. A rainbow sits in the mist on sunny mornings.',
+       tags:['must','free'],tip:'Climb the stairs — the valley view from the top is worth 10 minutes of effort.'},
+      {name:'Seljavallalaug — Hidden Hot Pool',icon:'♨️',type:'Natural Pool · Free · Historic',coords:[63.621,-19.980],
+       desc:'Iceland\'s oldest swimming pool (1923), hidden in a mountain valley. Green geothermal water, basic changing rooms, free. 20-min hike each way. After Þórsmörk\'s intensity, a warm soak here feels perfect.',
+       tags:['must','free'],tip:'Free. Bring a towel. The approach through the valley is half the magic.'},
+      {name:'Vík — Your South Base',icon:'🌙',type:'Village · Black Beach · Puffins',coords:[63.419,-19.006],
+       desc:'Small village at Iceland\'s southernmost point. Walk Víkurfjara beach at midnight sun — the church on the hill, the sea stacks, the roaring Atlantic. Dinner and early night.',
        tags:[]},
     ],
     restaurants:[
-      {name:'Systrakaffi',location:'Kirkjubæjarklaustur',price:'€€',type:'The local café in Klaustur',
-       desc:'Soup, lamb stew, coffee. The only real option in the village and genuinely good. Great stop after the lava fields.',
-       vibes:['local']},
-      {name:'Kaffi Krús',location:'Selfoss',price:'€',type:'Café',
-       desc:'Reliable spot in Selfoss. Soup, sandwich, coffee. Good value.',
-       vibes:['local','cheap']},
-      {name:'Gott',location:'Selfoss',price:'€€',type:'Best restaurant in Selfoss',
-       desc:'Solid local cooking — lamb, fish, good burgers. Popular with locals and the best dinner option in Selfoss.',
-       vibes:['local']},
-      {name:'Hotel South Coast Restaurant',location:'Selfoss',price:'€€€',type:'Dinner with river views',
-       desc:'The hotel restaurant on the Ölfusá river. Arctic char, lamb shank, good wine list. Quiet evening after a long drive.',
-       vibes:['romantic']},
+      {name:'Skál! Restaurant',location:'Vík',price:'€€€',type:'Best dinner in Vík',desc:'Local lamb, fish and good wine. The best option in town — book a table when you arrive.',vibes:['upscale','romantic','must']},
+      {name:'Suður-Vík',location:'Vík',price:'€€',type:'Village café',desc:'Soup, sandwiches, coffee. Good lunch stop or early dinner.',vibes:['local','cheap']},
     ],
     hotels:[
-      {name:'Hotel South Coast',price:'€130–190/night',type:'★★★★ · Selfoss · River views'},
-      {name:'Guesthouse Hella',price:'€85–125/night',type:'Guesthouse · Hella · 30 min east · Quieter'},
-      {name:'Airbnb Selfoss',price:'€80–130/night',type:'Various options · Book early'},
+      {name:'Hótel Vík í Mýrdal',price:'€140–200/night',type:'★★★ · Best in Vík · On the hill'},
+      {name:'Black Beach Suites',price:'€160–220/night',type:'Design suites · Sea views'},
+      {name:'Airbnb Vík area',price:'€90–140/night',type:'Various local options'},
     ]
   },
-
   day6:{
-    num:6,color:'#c084fc',
-    title:'Snæfellsnes Peninsula',
-    subtitle:'Selfoss → Arnarstapi → Snæfellsjökull → Lysuhólslaug → Kirkjufell → Stykkishólmur',
-    km:'~360 km',drive:'~5h',night:'Stykkishólmur or Grundarfjörður',
-    center:[64.85,-22.9],zoom:9,
-    feasibility:{level:'full',label:'🟡 Full day — leave by 8am',note:'Selfoss → Snæfellsnes is 2h15 via Borgarnes (Route 1 north, then Route 54). Add 5 stops on the peninsula + Lysuhólslaug pool = arrive Stykkishólmur around 8pm. The Arnarstapi→Hellnar cliff walk can be shortened to 45 min. Aim for Kirkjufell by 7pm for golden light.'},
+    num:6,color:'#fb923c',
+    title:'Vík — Base Day',
+    subtitle:'Reynisfjara · Fjaðrárgljúfur Canyon · Black Beach Sunset',
+    km:'~90 km',drive:'~1h30 (round trips)',night:'Vík',
+    center:[63.6,-18.7],zoom:9,
+    feasibility:{level:'easy',label:'🟢 No pressure — two day trips from your base',
+      note:'Both stops are easy day trips from Vík, back for dinner. Leave bags at the hotel. Reynisfjara in the morning (10 min). Canyon in the afternoon (30 min). Walk the black beach at midnight.'},
     stops:[
-      {name:'Arnarstapi → Hellnar — Coastal Walk',icon:'🌊',type:'Coastal Hike',coords:[64.768,-23.622],
-       desc:'Fishing hamlet with basalt cliffs sculpted by the Atlantic. Natural arch Gatklettur. 2.5km walk to Hellnar along the clifftops — rock formations, sea caves, seabirds.',
-       tags:['must','free']},
-      {name:'Snæfellsjökull — Glacier Volcano',icon:'🏔️',type:'Volcano · Glacier · National Park',coords:[64.808,-23.777],
-       desc:'Jules Verne\'s "Journey to the Centre of the Earth" glacier. Visible from Reykjavik 150km away. The circular road hugs right beneath the ice cap. Eerie, mythical atmosphere.',
-       tags:['must','free']},
-      {name:'Djúpalónssandur',icon:'🖤',type:'Black Pebble Beach',coords:[64.752,-23.896],
-       desc:'Black pebble beach with four Viking lifting stones and rusted trawler wreck fragments. Raw and windswept. No posing tourists — just you and the Atlantic.',
-       tags:['must','free']},
-      {name:'Lysuhólslaug — Natural Geothermal Pool',icon:'♨️',type:'Natural Pool · Snæfellsnes',coords:[64.829,-23.436],
-       desc:'A small outdoor geothermal pool on the south side of the peninsula — greenish algae-rich water, surrounded by farmland and mountain views. Around 30–34°C. Almost zero tourists. Entry ~€5–10.',
-       tags:['paid'],tip:'One of Iceland\'s best-kept secrets. A 30-min soak here after the coastal walk feels earned. Call ahead to confirm it\'s open: +354 435 6716.'},
-      {name:'Kirkjufell & Kirkjufellsfoss',icon:'⛰️',type:'Iceland\'s Most Photographed Mountain',coords:[64.944,-23.305],
-       desc:'"Arrowhead Mountain" from Game of Thrones. Unmistakable arrow-shaped peak. Waterfall Kirkjufellsfoss in the foreground = the iconic shot. Late evening light (10pm) turns everything gold.',
-       tags:['must','free'],tip:'Come in the late evening. 45 min minimum. Don\'t attempt to climb without a guide.'},
-      {name:'Stykkishólmur',icon:'⛵',type:'Harbour Town · Overnight',coords:[65.071,-22.732],
-       desc:'The most charming town on the peninsula: colourful harbour, painted tin houses, views over dozens of islands in Breiðafjörður fjord.',
-       tags:[]},
+      {name:'Reynisfjara — Iceland\'s Most Dramatic Beach',icon:'🖤',type:'Black Sand Beach · Sea Stacks',coords:[63.403,-19.128],
+       desc:'Jet-black volcanic sand, towering hexagonal basalt columns, Reynisdrangar sea stacks rising from the Atlantic. Raw, wild, otherworldly. 10 min from Vík — start here.',
+       tags:['must','free'],warn:'⚠️ Sneaker waves are deadly here. Stay at least 20m from the water\'s edge at all times. People have died.'},
+      {name:'Fjaðrárgljúfur Canyon',icon:'🏔️',type:'Canyon · 2km Rim Walk',coords:[63.776,-18.172],
+       desc:'A 100m deep canyon carved by a glacial river through basalt and rhyolite. 2km path along the rim winds through alien formations. One of Iceland\'s most dramatic and least-visited landscapes.',
+       tags:['must','free'],tip:'30 min drive east from Vík. 45 min walk along the rim. Go early — spectacular morning light into the canyon.'},
+      {name:'Víkurfjara Beach — Midnight Walk',icon:'🌊',type:'Black Beach · Puffins · Sunset',coords:[63.419,-19.006],
+       desc:'The black beach right at Vík. Walk it at 10pm — the light is extraordinary in May. Puffins nest at Dyrhólaey headland (30 min west) from mid-May.',
+       tags:['free'],tip:'Dyrhólaey viewpoint for puffins: 25 min drive west, free, go at dusk when they return to the cliffs.'},
     ],
     restaurants:[
-      {name:'Narfeyrarstofa',location:'Stykkishólmur',price:'€€€',type:'Best restaurant on the peninsula',
-       desc:'A classic Icelandic farmhouse dining experience. Lamb, langoustine, Arctic char with local vegetables. The definitive dinner in Stykkishólmur.',
-       vibes:['romantic','upscale','must']},
-      {name:'Bjargarsteinn Mathús',location:'Arnarstapi',price:'€€€',type:'Incredible views + great food',
-       desc:'Perched on the cliffs at Arnarstapi. Local fish, lamb and light meals. The view alone is worth stopping — eat here for lunch on the way around.',
-       vibes:['romantic']},
-      {name:'Café Lækjarbrekka',location:'Hellnar',price:'€',type:'Coffee & snacks with ocean views',
-       desc:'Tiny café at the end of the cliff walk from Arnarstapi. Coffee, soup, pastries. Perfect mid-walk refuel.',
-       vibes:['local','cheap']},
-      {name:'Sjávarpakkhúsið',location:'Stykkishólmur harbour',price:'€€',type:'Casual harbour fish',
-       desc:'More relaxed than Narfeyrarstofa. Good fish and chips, fish soup, local catch of the day. Great if you want something casual and quick.',
-       vibes:['local']},
+      {name:'Skál! Restaurant',location:'Vík',price:'€€€',type:'Dinner round 2',desc:'If you liked it last night, come back. The lamb is that good.',vibes:['upscale','romantic']},
+      {name:'Strondin Bistro',location:'Vík',price:'€€',type:'Casual burger & fish',desc:'Good beer, burgers, fish and chips. Relaxed and friendly.',vibes:['local']},
     ],
     hotels:[
-      {name:'Hotel Egilsen — Stykkishólmur',price:'€150–210/night',type:'Boutique ★★★★ · Historic house · Harbour views'},
-      {name:'Hótel Hellnar',price:'€120–175/night',type:'★★★ · Facing the Atlantic · Stunning setting'},
-      {name:'Airbnb Grundarfjörður',price:'€100–150/night',type:'Direct Kirkjufell views possible'},
+      {name:'Same Vík accommodation',price:'Night 2 of 2',type:'No checkout — full free day from your base'},
     ]
   },
-
-  day7:{
-    num:7,color:'#ff6b6b',
-    title:'Back to Reykjavik & Departure',
-    subtitle:'Stykkishólmur → Reykjavik → Harpa → KEF',
-    km:'~200 km',drive:'~2h30',night:'Flight home',
-    center:[64.25,-21.9],zoom:8,
-    feasibility:{level:'full',label:'⚠️ Depends on your flight time',note:'If flight is after 7pm: all activities fit comfortably. If flight is before 5pm: skip Hvalfjörður and one Reykjavik activity. Return the car 2–3h before departure — KEF is 45 min from the city centre.'},
-    stops:[
-      {name:'Hvalfjörður Fjord Route (optional detour)',icon:'🚗',type:'Scenic Drive',coords:[64.35,-21.65],
-       desc:'Instead of the direct highway, loop around Hvalfjörður fjord (30 min extra). Cliffs, waterfalls and a long narrow fjord — almost no tourists. Glymur waterfall trailhead here (196m drop, Iceland\'s tallest, 2h A/R).',
-       tags:['free']},
-      {name:'Harpa Concert Hall',icon:'🎶',type:'Architecture · Free to Enter',coords:[64.150,-21.931],
-       desc:'Honeycomb glass facade co-designed with Olafur Eliasson. Free to explore inside. View over Faxaflói bay and the mountains.',
-       tags:['must','free']},
-      {name:'Sundhollin — Geothermal Pool',icon:'🏊',type:'Local Experience',coords:[64.145,-21.924],
-       desc:'Reykjavik\'s historic geothermal public pool (1937). Hot pots at 38–44°C, cold plunge, sauna. 100% local — politicians and fishermen share the same hot pot.',
-       tags:['must','paid'],tip:'Entry ~€8. Opens 6:30am. Mandatory nude shower before entering — it\'s the law, attendants check. Completely normal.'},
-      {name:'Matur og Drykkur — Farewell Lunch',icon:'🍽️',type:'Best Icelandic Cuisine',coords:[64.146,-21.952],
-       desc:'Geothermal rye bread, smoked lamb, sour skyr, salt cod. The finest traditional Icelandic cooking in the city. End the trip on a high note.',
-       tags:['paid']},
-      {name:'Laugavegur — Last Shopping',icon:'🛍️',type:'Souvenirs',coords:[64.146,-21.933],
-       desc:'Lopapeysa wool jumper at The Handknitting Association of Iceland (authentic source). Ceramics, Icelandic design, skyr, salty liquorice.',
-       tags:[]},
-      {name:'KEF Airport — Departure',icon:'✈️',type:'Departure',coords:[63.985,-22.605],
-       desc:'Return the car 2–3h before your flight. Duty free at KEF: alcohol MUCH cheaper than in the city.',
-       tags:[],tip:'Duty free: 1L spirits + 2L wine + 24 beers per adult. Brennivín (caraway schnapps, "the Black Death") = the Icelandic souvenir ~€15. Also grab skyr and liquorice for gifts.'},
-    ],
-    restaurants:[
-      {name:'Brauð & Co',location:'Frakkastígur, Reykjavik',price:'€',type:'Breakfast — best bakery',
-       desc:'Cinnamon rolls and sourdough croissants at 7am. Queue is part of the experience. The perfect last Reykjavik morning.',
-       vibes:['local','cheap','must']},
-      {name:'Matur og Drykkur',location:'Grandagarður',price:'€€€',type:'Farewell lunch',
-       desc:'Traditional Icelandic cuisine at its best. Geothermal rye bread baked underground. The definitive last meal before flying home.',
-       vibes:['romantic','upscale','must']},
-      {name:'Sandholt',location:'Laugavegur',price:'€€',type:'Artisan bakery & brunch',
-       desc:'Beautiful full brunch — pastries, smoked salmon on rye, poached eggs. Quieter than Brauð & Co, more of a sit-down experience.',
-       vibes:['romantic','local']},
-      {name:'Kopar',location:'Old harbour',price:'€€€€',type:'Farewell dinner (evening flights)',
-       desc:'If your flight is in the evening, end with dinner at Kopar — seafood with harbour views. One of the best tables in Iceland.',
-       vibes:['romantic','upscale']},
-    ],
-    hotels:[]
-  }
 };
 
+// ═══════════════════════════════════════════════
+//  ROUTES
+// ═══════════════════════════════════════════════
 const ROUTES={
-  day1:[[63.985,-22.605],[63.880,-22.449],[64.147,-21.943],[64.142,-21.927]],
-  day2:[[64.147,-21.943],[64.255,-20.933],[64.117,-20.733],[64.312,-20.302],[64.327,-20.120],[63.932,-21.014]],
-  day3:[[63.932,-21.014],[63.615,-19.988],[63.621,-19.980],[63.532,-19.511],[63.521,-19.566],[63.459,-19.364],[63.405,-19.047],[63.403,-19.128],[63.419,-19.006]],
-  day4:[[63.419,-19.006],[63.776,-18.172],[63.988,-16.975],[63.993,-16.867],[64.078,-16.230],[64.072,-16.177],[64.253,-15.208]],
-  day5:[[64.253,-15.208],[63.700,-18.500],[63.784,-18.058],[63.810,-17.950],[63.932,-21.014]],
-  day6:[[63.932,-21.014],[64.541,-21.924],[64.768,-23.622],[64.808,-23.777],[64.752,-23.896],[64.829,-23.436],[64.944,-23.305],[65.071,-22.732]],
-  day7:[[65.071,-22.732],[64.35,-21.65],[64.150,-21.931],[64.145,-21.924],[64.146,-21.933],[63.985,-22.605]]
+  day1:[[63.985,-22.605],[63.880,-22.449],[64.147,-21.943],[64.142,-21.927],[64.151,-21.955]],
+  day2:[[64.147,-21.943],[64.143,-21.879],[64.142,-21.927],[64.145,-21.934],[64.151,-21.955]],
+  day3:[[64.147,-21.943],[63.750,-20.233],[63.682,-19.519],[63.698,-19.500]],
+  day4:[[63.682,-19.519],[63.692,-19.530],[63.675,-19.502],[63.682,-19.495],[63.682,-19.519]],
+  day5:[[63.682,-19.519],[63.750,-20.233],[63.615,-19.988],[63.532,-19.511],[63.621,-19.980],[63.419,-19.006]],
+  day6:[[63.419,-19.006],[63.403,-19.128],[63.776,-18.172],[63.419,-19.006]],
 };
 
+// ═══════════════════════════════════════════════
+//  HOTEL MARKERS
+// ═══════════════════════════════════════════════
 const HOTELS_MAP={
   day1:{coords:[64.147,-21.943],name:'Reykjavik'},
-  day2:{coords:[63.833,-20.400],name:'Hella'},
-  day3:{coords:[63.419,-19.006],name:'Vík'},
-  day4:{coords:[64.253,-15.208],name:'Höfn'},
-  day5:{coords:[63.932,-21.014],name:'Selfoss'},
-  day6:{coords:[65.071,-22.732],name:'Stykkishólmur'},
-  day7:null,
+  day2:{coords:[64.147,-21.943],name:'Reykjavik'},
+  day3:{coords:[63.682,-19.519],name:'Þórsmörk'},
+  day4:{coords:[63.682,-19.519],name:'Þórsmörk'},
+  day5:{coords:[63.419,-19.006],name:'Vík'},
+  day6:{coords:[63.419,-19.006],name:'Vík'},
 };
 
 // ═══════════════════════════════════════════════
-//  10-DAY PLAN DATA (Full Ring Road · May 15–24)
+//  THE 3 CHILL BASE OPTIONS (D7–D10)
 // ═══════════════════════════════════════════════
-const DAYS10={
-  day1:DAYS.day1, day2:DAYS.day2, day3:DAYS.day3,
-  day4:{...DAYS.day4, feasibility:{level:'full',label:'🟡 Full day — take it at your own pace',note:'Same iconic stops, but with 10 days you\'re not in a sprint. Skip Svartifoss if you feel like it, spend an extra hour at Jökulsárlón watching the light change on the icebergs. Book the glacier walk for 10 or 11am. Leave Vík by 8am.'}},
-  day5:{
-    num:5,color:'#fb923c',
-    title:'East Fjords',
-    subtitle:'Höfn → Djúpivogur → East Fjords → Seyðisfjörður → Egilsstaðir',
-    km:'~260 km',drive:'~3h30 (no stops)',night:'Egilsstaðir',
-    center:[65.0,-14.8],zoom:8,
-    feasibility:{level:'easy',label:'🟢 Scenic drive day',note:'260 km through Iceland\'s least-visited coastline. Optional detour to Seyðisfjörður adds 30km/30min. Leave Höfn at 9am, arrive Egilsstaðir by 4pm with all stops done.'},
-    stops:[
-      {name:'Djúpivogur — Eggs of Merry Bay',icon:'🥚',type:'Art · Village',coords:[64.657,-14.282],
-       desc:'Tiny fishing village with Sigurður Guðmundsson\'s outdoor sculpture: 34 giant granite eggs on the pier, each representing a local bird species. Charming harbour and excellent coffee stop.',
-       tags:['must','free'],tip:'Café Við Voginn in the village for lamb soup. 30-min stop.'},
-      {name:'East Fjords Scenic Drive',icon:'🏔️',type:'Coastal Drive · Route 1',coords:[65.000,-14.200],
-       desc:'The most dramatic section of the Ring Road: fjords plunging into the sea, hanging waterfalls, remote farms, almost no tourists. The most "secret" Iceland in the entire trip. Stop whenever something grabs you.',
-       tags:['free']},
-      {name:'Seyðisfjörður — Rainbow Town (detour)',icon:'🌈',type:'Town · 30km off Ring Road',coords:[65.262,-14.002],
-       desc:'The most photogenic town in Iceland — a rainbow-painted road leads to a blue wooden church, surrounded by waterfalls on every side. Route 93 detour (25 min each way). The Faroe Islands ferry leaves from here.',
-       tags:['must','free'],tip:'Worth every minute of the detour. Early afternoon light hits the church perfectly.'},
-      {name:'Egilsstaðir — Overnight',icon:'🌙',type:'Town',coords:[65.270,-14.395],
-       desc:'Main hub of East Iceland. Good restaurants and supermarkets. Perfectly positioned for the drive north tomorrow.',
-       tags:[]},
+const CHILL_OPTIONS=[
+  {
+    id:'hofn',
+    emoji:'🦞',
+    name:'Höfn — Glaciers & Langoustines',
+    badge:'Recommended',badgeClass:'rec',
+    tagline:'The most natural continuation. Drive east through the most beautiful stretch of the Ring Road.',
+    chips:['~2.5h from Vík','~470km to KEF','Jökulsárlón 1h away','Total quiet'],
+    desc:'Höfn is a small harbour town at the foot of Vatnajökull — Europe\'s largest glacier. The drive there from Vík is extraordinary: you pass Jökulsárlón (the iceberg lagoon) and Diamond Beach on the way. Then 3 days with no agenda: Ástríður bakery in the morning, langoustines at Pakkhús, a fjord walk, the glacier without crowds.',
+    pros:[
+      {t:'Jökulsárlón',d:'icebergs floating in turquoise water — one of the most surreal places on Earth'},
+      {t:'Höfn langoustines',d:'Pakkhús restaurant — the best seafood meal of the trip'},
+      {t:'Ástríður bakery',d:'legendary cardamom buns, the best outside Reykjavik'},
+      {t:'Hoffellsjökull',d:'private glacier 15km away — zero tourists, completely free'},
+      {t:'Vatnajökull views',d:'Europe\'s largest ice cap fills the entire horizon from town'},
     ],
-    restaurants:[
-      {name:'Café Við Voginn',location:'Djúpivogur',price:'€€',type:'Village café',desc:'Lamb soup and coffee on the harbour pier. Best stop on the East Fjords drive.',vibes:['local']},
-      {name:'Café Nielsen',location:'Egilsstaðir',price:'€€€',type:'Best in East Iceland',desc:'Local trout, reindeer, lamb in a charming historic house. Consistently excellent.',vibes:['local','upscale','must']},
-      {name:'Hotel Héraðið Restaurant',location:'Egilsstaðir',price:'€€€',type:'Hotel restaurant',desc:'Reliable dinner — Icelandic lamb and fish, good wine list.',vibes:['upscale']},
-    ],
+    warn:'⚠️ Return to KEF from Höfn = 470km (~5.5h). Plan D10 as a full driving day, or schedule an early flight.',
     hotels:[
-      {name:'Hotel Héraðið',price:'€130–180/night',type:'★★★★ · Best in Egilsstaðir'},
-      {name:'Guesthouse Egilsstaðir',price:'€90–130/night',type:'Guesthouse · Good value'},
-      {name:'Airbnb Egilsstaðir',price:'€70–110/night',type:'Various options'},
-    ]
+      {name:'Fosshotel Vatnajökull',price:'€150–260/night',type:'★★★★ · Glacier views · Best in region'},
+      {name:'Guesthouse Hvammur',price:'€90–140/night',type:'Cosy · Harbour views · Great value'},
+      {name:'Airbnb Höfn',price:'€80–130/night',type:'Various local options'},
+    ],
+    coords:[64.253,-15.208],
+    routeFromVik:[[63.419,-19.006],[63.700,-18.500],[64.078,-16.230],[64.072,-16.177],[64.253,-15.208]],
   },
-  day6:{
-    num:6,color:'#4ade80',
-    title:'Lake Mývatn — Geothermal North',
-    subtitle:'Egilsstaðir → Goðafoss → Dimmuborgir → Hverir → Mývatn Nature Baths',
-    km:'~200 km',drive:'~2h30 (no stops)',night:'Mývatn area',
-    center:[65.62,-16.90],zoom:10,
-    feasibility:{level:'easy',label:'🟢 Take your time — no rush',note:'200 km total, but Mývatn\'s sites are all within 15 min of each other. Leave Egilsstaðir at 9am, stop at Goðafoss on the way (~1h), then spend the rest of the day looping around the lake at whatever pace feels right. Save the Nature Baths for last — arrive at 5pm and stay until sunset.'},
-    stops:[
-      {name:'Goðafoss — Waterfall of the Gods',icon:'💦',type:'Waterfall · Historic · Year 1000',coords:[65.682,-17.550],
-       desc:'In year 1000, the chieftain Þorgeir threw his pagan idols here after Iceland adopted Christianity. 12m wide, 12m tall, crystal clear. One of Iceland\'s most beautiful waterfalls. Stop on both banks.',
-       tags:['must','free'],tip:'30 min minimum — walk both sides. Perfect morning light if you leave Egilsstaðir early.'},
-      {name:'Dimmuborgir — Dark Castles',icon:'🏰',type:'Lava Formations',coords:[65.591,-16.897],
-       desc:'Bizarre lava formations shaped by a collapsed lava lake 2,300 years ago. Labyrinthine trails through towers, arches and caves. Icelandic mythology: home of the Christmas Yule Lads.',
-       tags:['must','free']},
-      {name:'Grjótagjá — Game of Thrones Cave',icon:'🌡️',type:'Lava Cave Hot Spring',coords:[65.626,-16.882],
-       desc:'A lava cave with a crystal-clear geothermal pool — used in Game of Thrones Season 3 (Jon Snow scene). Water is now ~50°C (too hot to swim) but you can enter and admire the otherworldly setting.',
-       tags:['must','free'],tip:'Small cave — go early or late to avoid queues.'},
-      {name:'Námaskarð / Hverir — Sulfur Fields',icon:'🌋',type:'Geothermal · Mars Landscape',coords:[65.638,-16.823],
-       desc:'The most alien landscape on Earth. Boiling mud pots, sulfur steam vents, rust-red mineral deposits across a barren ridge. The smell hits you from the car park.',
-       tags:['must','free'],warn:'⚠️ Stay on marked paths — ground around mud pots is fragile crust over scalding water.'},
-      {name:'Mývatn Nature Baths',icon:'♨️',type:'Geothermal Spa · The Northern Blue Lagoon',coords:[65.632,-16.847],
-       desc:'Milky-blue geothermal lake at 38–40°C with mountain views. Far less crowded than Blue Lagoon, more authentic. Soak until closing time as the midnight light turns everything amber.',
-       tags:['must','book','paid'],tip:'Entry ~€40–50. Open until 10pm. Book ahead but usually available same-day in May. Bring a book, a beer and stay an hour.'},
+  {
+    id:'snaefellsnes',
+    emoji:'🏔️',
+    name:'Snæfellsnes — Jules Verne\'s Peninsula',
+    badge:'Alternative A',badgeClass:'alt',
+    tagline:'Drive back west, then north to the most dramatic peninsula in Iceland.',
+    chips:['~3.5h from Vík','~2h to KEF','Stykkishólmur base','Romantic & remote'],
+    desc:'Snæfellsnes is a peninsula jutting out into the Atlantic with a glacier at its tip — Jules Verne\'s entry point to the Centre of the Earth. Base yourself in Stykkishólmur (a charming harbour town) or Arnarstapi (a tiny village on the south coast). Day trips to the glacier, coastal walks, Kirkjufell mountain, Lysuhólslaug natural pool.',
+    pros:[
+      {t:'Snæfellsjökull',d:'a glacier volcano at the end of the world — utterly surreal'},
+      {t:'Arnarstapi coastal walk',d:'basalt arches and Atlantic cliffs, 2.5km between two villages'},
+      {t:'Lysuhólslaug',d:'algae-green natural geothermal pool on a farm — almost nobody goes here'},
+      {t:'Kirkjufell mountain',d:'Iceland\'s most photographed peak, golden hour views'},
+      {t:'Close to KEF',d:'Stykkishólmur to KEF = ~2h — easy departure day'},
     ],
-    restaurants:[
-      {name:'Gamli Bærinn',location:'Mývatn',price:'€€',type:'Local pub & restaurant',desc:'Lamb, fish, cold beer. The main hangout in the area. Genuinely local.',vibes:['local','must']},
-      {name:'Café Sel',location:'Mývatn',price:'€€',type:'Casual café',desc:'Soup and sandwiches. Good lunch before the Nature Baths.',vibes:['local','cheap']},
-      {name:'Hotel Laxá Restaurant',location:'Mývatn',price:'€€€',type:'Best dinner',desc:'Reindeer, Arctic char, Icelandic lamb. Nicest restaurant in the area.',vibes:['romantic','upscale']},
-    ],
+    warn:'ℹ️ Drive from Vík to Snæfellsnes = 3.5h (back west then north). You\'re retracing some road.',
     hotels:[
-      {name:'Hotel Laxá',price:'€180–250/night',type:'★★★★ · Lake views · Best in area'},
-      {name:'Dimmuborgir Guesthouse',price:'€100–155/night',type:'Lava formations next door'},
-      {name:'Airbnb Reykjahlíð',price:'€80–120/night',type:'Lakeside village options'},
-    ]
+      {name:'Fosshotel Stykkishólmur',price:'€140–200/night',type:'★★★★ · Harbour views'},
+      {name:'Hótel Stykkishólmur',price:'€120–180/night',type:'Historic harbour hotel'},
+      {name:'Airbnb Arnarstapi',price:'€90–150/night',type:'On the south coast cliffs'},
+    ],
+    coords:[64.944,-23.305],
+    routeFromVik:[[63.419,-19.006],[63.932,-21.014],[64.541,-21.924],[64.768,-23.622],[64.944,-23.305]],
   },
-  day7:{
-    num:7,color:'#38bdf8',
-    title:'Whale Watching & Akureyri',
-    subtitle:'Mývatn → Húsavík (whales) → Akureyri',
-    km:'~145 km',drive:'~2h (no stops)',night:'Akureyri',
-    center:[65.88,-17.70],zoom:9,
-    feasibility:{level:'easy',label:'🟢 Relatively relaxed',note:'145 km only. Leave Mývatn at 8am, catch a 10am whale watching boat in Húsavík (3h tour, back by 1pm). Arrive Akureyri by 3pm — full afternoon to explore Iceland\'s northern capital.'},
-    stops:[
-      {name:'Húsavík — Whale Watching',icon:'🐋',type:'Iceland\'s Whale Capital',coords:[66.044,-17.339],
-       desc:'Iceland\'s best whale watching. May = peak season: humpbacks, minkes, occasional blue whales. 95%+ success rate. Traditional oak schooners or rigid RIBs. The connection to an animal this size — surfacing 20 metres from the boat — changes something.',
-       tags:['must','book','paid'],tip:'Book with North Sailing or Gentle Giants. Traditional schooner ~€85/pers. Book 2+ weeks ahead. Dress very warmly — sea is cold. 3h tour.'},
-      {name:'Húsavík Whale Museum (optional)',icon:'🦴',type:'Museum',coords:[66.043,-17.338],
-       desc:'Real whale skeletons, excellent exhibits. 45 min if you\'re into it. Skip if you\'d rather get to Akureyri early.',
-       tags:['paid']},
-      {name:'Akureyri — Northern Capital',icon:'🌆',type:'City · Culture',coords:[65.688,-18.093],
-       desc:'Iceland\'s "capital of the north" (pop. 20,000). Charming pedestrian street, excellent restaurants, northernmost botanical garden on Earth (roses growing at 65°N). Akureyrarkirkja church has a stunning 1940s interior.',
-       tags:['free'],tip:'Walk up to the church for the best city view. Botanical garden is free — absurdly beautiful for this latitude.'},
+  {
+    id:'hella',
+    emoji:'🐴',
+    name:'Farmstay near Hella — Horses & Hot Springs',
+    badge:'Alternative B',badgeClass:'farm',
+    tagline:'Stay close, slow right down. Icelandic horses, geothermal rivers, total peace.',
+    chips:['~45 min from Vík','~1.5h to KEF','Horse riding country','Budget-friendly'],
+    desc:'The Hella/Hvolsvöllur area is Iceland\'s horse heartland — rolling lava plains, farmhouses, geothermal rivers you can swim in for free. Stay in a farm guesthouse for the authentic Iceland experience. Day trips are easy: Golden Circle is 1h, south coast waterfalls are 30 min. No pressure to go anywhere — walk in the fields, ride a horse, lie in the hot river.',
+    pros:[
+      {t:'Icelandic horse riding',d:'the world\'s most unique breed — tölt gait, incredibly gentle, 1–2h rides daily'},
+      {t:'Reykjadalur hot river',d:'hike 45 min to a geothermal river and soak in it — completely free'},
+      {t:'Closest to KEF',d:'Hella to KEF = 1.5h — the most stress-free departure of the three options'},
+      {t:'Farm guesthouse',d:'home-cooked breakfast, a cat on the sofa, real Icelandic hospitality'},
+      {t:'Day trip flexibility',d:'Golden Circle and south coast both within 1h — anything you haven\'t done yet'},
     ],
-    restaurants:[
-      {name:'Strikið',location:'Akureyri',price:'€€€€',type:'Best restaurant, rooftop views',desc:'Reindeer, Arctic char, Icelandic lamb with panoramic fjord views. Book ahead.',vibes:['romantic','upscale','must']},
-      {name:'Rub 23',location:'Akureyri',price:'€€€',type:'Asian-Icelandic sushi fusion',desc:'Arctic char sashimi, langoustine rolls. Creative and outstanding.',vibes:['romantic','upscale']},
-      {name:'Bláa Kannan',location:'Akureyri',price:'€',type:'Classic café',desc:'Most charming café in Akureyri — coffee, cakes, soup in a historic red building.',vibes:['local','cheap']},
-    ],
+    warn:'ℹ️ Less dramatic than Höfn or Snæfellsnes — best if you genuinely want zero agenda and total rest.',
     hotels:[
-      {name:'Icelandair Hotel Akureyri',price:'€160–220/night',type:'★★★★ · Central · Fjord views'},
-      {name:'Hotel Kea',price:'€140–200/night',type:'★★★★ · The classic Akureyri hotel'},
-      {name:'Airbnb Akureyri',price:'€90–140/night',type:'Various central options'},
-    ]
+      {name:'Stracta Hotel Hella',price:'€120–180/night',type:'★★★★ · Modern · Geothermal pool on-site'},
+      {name:'Guesthouse Hvolsvöllur',price:'€90–130/night',type:'Farm guesthouse · Breakfast included'},
+      {name:'Airbnb Hella area',price:'€70–120/night',type:'Farm cottages and local guesthouses'},
+    ],
+    coords:[63.826,-20.387],
+    routeFromVik:[[63.419,-19.006],[63.826,-20.387]],
   },
-  day8:{
-    num:8,color:'#c084fc',
-    title:'Seals, Lava & the West',
-    subtitle:'Akureyri → Hvammstangi (seals) → Borgarnes',
-    km:'~260 km',drive:'~3h30 (no stops)',night:'Borgarnes',
-    center:[65.0,-20.5],zoom:7,
-    feasibility:{level:'easy',label:'🟢 Short and scenic — sleep early',note:'Only 260 km today, and half of it is beautiful Arctic coastline. Leave Akureyri at 9am, take your time at the seals, have a real lunch in Borgarnes and arrive with a free afternoon. No rush — Snæfellsnes starts tomorrow.'},
-    stops:[
-      {name:'Hvammstangi — Seal Coast',icon:'🦭',type:'Wildlife · Seal Center',coords:[65.400,-20.936],
-       desc:'The Vatnsnes peninsula has the highest seal concentration in Iceland. Hundreds of harbour seals lounging on the beaches, completely unbothered by visitors. Drive the loop to Illugastaðir — seals within metres of you.',
-       tags:['must','paid'],tip:'Entry ~€10 for the center. The Illugastaðir loop (50km, 1h) is the highlight — go slow and stop whenever you spot them.'},
-      {name:'Borgarnes — Afternoon to Breathe',icon:'🌙',type:'Town · Overnight',coords:[64.541,-21.924],
-       desc:'A pleasant small town on a peninsula in the fjord. Arrive early afternoon, wander, have a good dinner, sleep well. Tomorrow is Snæfellsnes — your last big day of exploration.',
-       tags:[]},
-    ],
-    restaurants:[
-      {name:'Settlement Centre Restaurant',location:'Borgarnes',price:'€€€',type:'Best in town',desc:'Excellent lamb and fish in a beautifully designed space. Worth it for a sit-down dinner.',vibes:['upscale','romantic']},
-      {name:'Borgarnes Kaffi',location:'Borgarnes',price:'€€',type:'Casual local café',desc:'Soup, sandwiches, coffee. Great for a relaxed lunch on arrival.',vibes:['local','cheap']},
-    ],
-    hotels:[
-      {name:'Hotel Borgarnes',price:'€120–170/night',type:'★★★ · Fjord views · Central'},
-      {name:'Guesthouse Borgarnes',price:'€90–130/night',type:'Simple · Good value'},
-      {name:'Airbnb Borgarnes',price:'€80–120/night',type:'Various options'},
-    ]
-  },
-  day9:{
-    num:9,color:'#fbbf24',
-    title:'Snæfellsnes — All Day, No Rush',
-    subtitle:'Borgarnes → Arnarstapi → Snæfellsjökull → Lysuhólslaug → Kirkjufell → Reykjavik',
-    km:'~310 km',drive:'~4h30 (no stops)',night:'Reykjavik',
-    center:[64.85,-22.9],zoom:9,
-    feasibility:{level:'full',label:'🟡 Full day — but the pace is yours',note:'With a full day on the peninsula and no pressure to be back early, you can actually stop when something is beautiful. Leave Borgarnes at 9am. Do the coastal walk slowly. Soak at Lysuhólslaug. Reach Kirkjufell by 7pm for the golden light. Arrive Reykjavik by 10pm.'},
-    stops:[
-      {name:'Arnarstapi → Hellnar — Coastal Walk',icon:'🌊',type:'Coastal Hike · Take your time',coords:[64.768,-23.622],
-       desc:'Basalt sea arches, cliffs sculpted by the Atlantic, 2.5km cliff walk to Hellnar. In the 10-day plan: don\'t rush this one. Stop at Café Lækjarbrekka at Hellnar for coffee with an ocean view.',
-       tags:['must','free'],tip:'Allow 1h30 minimum — the pace is the point.'},
-      {name:'Snæfellsjökull — Glacier Volcano',icon:'🏔️',type:'Glacier · Jules Verne Territory',coords:[64.808,-23.777],
-       desc:'Jules Verne\'s "Journey to the Centre of the Earth" glacier. Stop, stand in front of it, feel how strange it is that you\'re here.',
-       tags:['must','free']},
-      {name:'Djúpalónssandur — Black Pebble Beach',icon:'🖤',type:'Beach · No crowds',coords:[64.752,-23.896],
-       desc:'Black pebble beach, Viking lifting stones, rusted trawler wreck. Wind, Atlantic, total quiet. Sit on a rock for 10 minutes.',
-       tags:['must','free']},
-      {name:'Lysuhólslaug — Afternoon Soak',icon:'♨️',type:'Natural Geothermal Pool',coords:[64.829,-23.436],
-       desc:'Algae-green water, farmland views, nobody around. ~30–34°C. Plan 1h here — you\'ve earned a proper soak on your last day of exploring.',
-       tags:['paid'],tip:'Call ahead: +354 435 6716. ~€5–10 entry.'},
-      {name:'Kirkjufell — Golden Hour',icon:'⛰️',type:'Iceland\'s Most Photographed Mountain',coords:[64.944,-23.305],
-       desc:'The arrow-shaped peak in the 7–9pm May light. Kirkjufellsfoss waterfall in the foreground. Your last big Iceland view — give it an hour.',
-       tags:['must','free']},
-      {name:'Reykjavik — Last Night',icon:'🌆',type:'Capital · Flight tomorrow',coords:[64.147,-21.943],
-       desc:'Arrive around 10pm. One last walk by the harbour if you have the energy. Pool at 6:30am tomorrow, then KEF.',
-       tags:[]},
-    ],
-    restaurants:[
-      {name:'Café Lækjarbrekka',location:'Hellnar',price:'€',type:'Coffee with Atlantic views',desc:'At the end of the coastal walk. Soup, coffee, pastries. Sit outside if the weather allows.',vibes:['local','cheap']},
-      {name:'Bjargarsteinn Mathús',location:'Arnarstapi',price:'€€€',type:'Lunch on the cliffs',desc:'Perched on the Arnarstapi cliffs. Local fish and lamb with extraordinary views. Lunch stop.',vibes:['romantic']},
-      {name:'Sægreifinn',location:'Reykjavik harbour',price:'€€',type:'Last lobster soup',desc:'One final humarsúpa. The best way to close the trip.',vibes:['must','local']},
-    ],
-    hotels:[
-      {name:'Canopy by Hilton Reykjavik',price:'€180–260/night',type:'★★★★ · Last night treat'},
-      {name:'Apotek Hotel',price:'€160–230/night',type:'★★★★ · Unique design'},
-      {name:'Airbnb Reykjavik Centre',price:'€100–155/night',type:'Central · Book early'},
-    ]
-  },
-  day10:{
-    num:10,color:'#ff6b6b',
-    title:'Departure — KEF 10:20',
-    subtitle:'Reykjavik → Sundhollin → Brauð & Co → KEF → LHR → LYS',
-    km:'~50 km',drive:'~45 min',night:'Flight home',
-    center:[64.1,-21.9],zoom:10,
-    feasibility:{level:'tight',label:'⚠️ Early departure — be at KEF by 8:20',note:'Flight KEF 10:20. Check-in 2h before = 8:20am. Return car by 7:30am latest. Leave hotel 6:30am. Doable: pool opens 6:30am (30 min), bakery, then straight to KEF.'},
-    stops:[
-      {name:'Sundhollin — Last Hot Pot',icon:'🏊',type:'Geothermal Pool · Opens 6:30am',coords:[64.145,-21.924],
-       desc:'Last soak before the airport. Opens 6:30am. 38–44°C hot pots, cold plunge. 30 min max. The perfect Iceland farewell.',
-       tags:['must','paid'],tip:'Entry ~€8. The mandatory nude shower takes 5 min. Worth every minute.'},
-      {name:'Brauð & Co — Last Breakfast',icon:'🥐',type:'Bakery · Opens 7am',coords:[64.146,-21.933],
-       desc:'Cinnamon roll and coffee to-go. Best bakery in Iceland — perfect last taste.',
-       tags:['must']},
-      {name:'KEF Airport — LYS via LHR',icon:'✈️',type:'Departure',coords:[63.985,-22.605],
-       desc:'Return car 3h before = 7:30am. Duty free: Brennivín schnapps (~€15), cheaper alcohol than anywhere in the city. Flight KEF 10:20 → LHR 14:10 → LYS 20:55.',
-       tags:[],tip:'Arrive Lyon 20:55. 10 days well spent.'},
-    ],
-    restaurants:[
-      {name:'Brauð & Co',location:'Frakkastígur',price:'€',type:'Breakfast to-go',desc:'Cinnamon roll and coffee. Perfect last Reykjavik morning.',vibes:['local','cheap','must']},
-    ],
-    hotels:[]
-  }
-};
-
-const ROUTES10={
-  day1:ROUTES.day1, day2:ROUTES.day2, day3:ROUTES.day3, day4:ROUTES.day4,
-  day5:[[64.253,-15.208],[64.657,-14.282],[65.000,-14.200],[65.262,-14.002],[65.270,-14.395]],
-  day6:[[65.270,-14.395],[65.682,-17.550],[65.591,-16.897],[65.626,-16.882],[65.638,-16.823],[65.632,-16.847],[65.641,-16.921]],
-  day7:[[65.641,-16.921],[66.044,-17.339],[65.688,-18.093]],
-  day8:[[65.688,-18.093],[65.400,-20.936],[64.541,-21.924]],
-  day9:[[64.541,-21.924],[64.768,-23.622],[64.808,-23.777],[64.752,-23.896],[64.829,-23.436],[64.944,-23.305],[64.147,-21.943]],
-  day10:[[64.147,-21.943],[64.145,-21.924],[64.146,-21.933],[63.985,-22.605]],
-};
-
-const HOTELS_MAP10={
-  day1:HOTELS_MAP.day1, day2:HOTELS_MAP.day2, day3:HOTELS_MAP.day3, day4:HOTELS_MAP.day4,
-  day5:{coords:[65.270,-14.395],name:'Egilsstaðir'},
-  day6:{coords:[65.641,-16.921],name:'Mývatn'},
-  day7:{coords:[65.688,-18.093],name:'Akureyri'},
-  day8:{coords:[64.541,-21.924],name:'Borgarnes'},
-  day9:{coords:[64.147,-21.943],name:'Reykjavik'},
-  day10:null,
-};
-
-const DAY_LOVE_NOTES10={
-  day1:DAY_LOVE_NOTES.day1, day2:DAY_LOVE_NOTES.day2, day3:DAY_LOVE_NOTES.day3, day4:DAY_LOVE_NOTES.day4,
-  day5:{emoji:'🌊',note:'The East Fjords — Iceland\'s best-kept secret. Almost no tourists, just fjords and open road. Take it slow today.'},
-  day6:{emoji:'🌋',note:'Steam rising from the earth, lava castles at your feet, and a warm blue pool waiting at the end of the day. No rush.'},
-  day7:{emoji:'🐋',note:'A humpback surfaces 20 metres from the boat. Nothing will prepare you for that. Then a quiet evening in Akureyri.'},
-  day8:{emoji:'🦭',note:'A short day. Seals on the beach, a long lunch, an early night. You\'ve earned some rest. Snæfellsnes tomorrow.'},
-  day9:{emoji:'🏔️',note:'The last full day. No schedule, just the peninsula — cliffs, a glacier, a warm pool, then Kirkjufell at golden hour.'},
-  day10:{emoji:'✈️',note:'Last morning. A hot pot at dawn, a cinnamon roll, one final look at the mountains. Iceland stays with you.'},
-};
+];
 
 // ═══════════════════════════════════════════════
 //  MAP
 // ═══════════════════════════════════════════════
-const map=L.map('map',{center:[64.6,-19.5],zoom:6,zoomControl:true,attributionControl:false});
+const map=L.map('map',{center:[64.0,-19.5],zoom:7,zoomControl:true,attributionControl:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(map);
 let mapLayers=[];
-let activePlan='7';
-function PD(){return activePlan==='7'?DAYS:DAYS10;}
-function PR(){return activePlan==='7'?ROUTES:ROUTES10;}
-function PH(){return activePlan==='7'?HOTELS_MAP:HOTELS_MAP10;}
-function PN(){return activePlan==='7'?DAY_LOVE_NOTES:DAY_LOVE_NOTES10;}
+
 function clearMap(){mapLayers.forEach(l=>map.removeLayer(l));mapLayers=[];}
 
 function hotelMarker(coords,name){
@@ -775,34 +477,48 @@ function hotelMarker(coords,name){
 
 function drawOverview(){
   clearMap();
-  const routes=PR();
-  const keys=Object.keys(routes);
-  const palette=['#ff6b6b','#fbbf24','#4ade80','#38bdf8','#fb923c','#4ade80','#38bdf8','#c084fc','#fbbf24','#ff6b6b'];
-  keys.forEach((k,i)=>{
-    const r=routes[k];
+  const palette=['#ff6b6b','#fbbf24','#4ade80','#38bdf8','#c084fc','#fb923c'];
+  Object.entries(ROUTES).forEach(([k,r],i)=>{
     if(r&&r.length) mapLayers.push(L.polyline(r,{color:palette[i]||'#67c8f0',weight:3,opacity:.85}).addTo(map));
   });
-  keys.forEach((k,i)=>{
-    const r=routes[k];
+  Object.entries(ROUTES).forEach(([k,r],i)=>{
     if(!r||!r.length) return;
     const ic=L.divIcon({html:`<div style="width:24px;height:24px;background:${palette[i]||'#67c8f0'};border-radius:50%;border:2px solid white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;box-shadow:0 2px 8px rgba(0,0,0,.6)">${i+1}</div>`,iconSize:[24,24],iconAnchor:[12,12],className:''});
     mapLayers.push(L.marker(r[0],{icon:ic}).addTo(map));
   });
-  Object.values(PH()).forEach(h=>{if(h) mapLayers.push(hotelMarker(h.coords,h.name).addTo(map));});
-  map.setView(activePlan==='7'?[64.5,-19.5]:[65.0,-18.5],activePlan==='7'?6:5);
+  // Show the 3 chill options as question marks
+  CHILL_OPTIONS.forEach(opt=>{
+    const ic=L.divIcon({html:`<div style="width:26px;height:26px;background:#1e3252;border:2px dashed #c084fc;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.6)">?</div>`,iconSize:[26,26],iconAnchor:[13,13],className:''});
+    mapLayers.push(L.marker(opt.coords,{icon:ic}).bindPopup(`<div style="font-family:system-ui"><strong>${opt.emoji} ${opt.name.split('—')[0].trim()}</strong><br><small style="color:#94a3b8">Option for D7–D10</small></div>`,{maxWidth:200}).addTo(map));
+  });
+  Object.values(HOTELS_MAP).forEach(h=>{if(h) mapLayers.push(hotelMarker(h.coords,h.name).addTo(map));});
+  map.setView([64.0,-20.5],7);
 }
 
 function drawDay(key){
   clearMap();
-  const day=PD()[key],route=PR()[key];
+  const day=DAYS[key],route=ROUTES[key];
   if(route) mapLayers.push(L.polyline(route,{color:day.color,weight:4,opacity:.9}).addTo(map));
   (day.stops||[]).forEach((s,i)=>{
     const ic=L.divIcon({html:`<div style="min-width:24px;height:24px;background:${day.color};border-radius:12px;border:2px solid white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;padding:0 5px;box-shadow:0 2px 8px rgba(0,0,0,.6)">${i+1}</div>`,iconSize:[24,24],iconAnchor:[12,12],className:''});
     mapLayers.push(L.marker(s.coords,{icon:ic}).bindPopup(`<div style="font-family:system-ui;max-width:200px"><strong>${s.name}</strong><br><small style="color:#94a3b8">${s.desc.substring(0,80)}…</small></div>`,{maxWidth:220}).addTo(map));
   });
-  const hotel=PH()[key];
+  const hotel=HOTELS_MAP[key];
   if(hotel) mapLayers.push(hotelMarker(hotel.coords,hotel.name).addTo(map));
   map.setView(day.center,day.zoom);
+}
+
+function drawChoiceMap(){
+  clearMap();
+  // Draw all 3 option routes in dashed style
+  const colors=['#4ade80','#67c8f0','#f8c95a'];
+  CHILL_OPTIONS.forEach((opt,i)=>{
+    mapLayers.push(L.polyline(opt.routeFromVik,{color:colors[i],weight:3,opacity:.7,dashArray:'8,5'}).addTo(map));
+    const ic=L.divIcon({html:`<div style="width:30px;height:30px;background:${colors[i]}20;border:2px solid ${colors[i]};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,.6)">${opt.emoji}</div>`,iconSize:[30,30],iconAnchor:[15,15],className:''});
+    mapLayers.push(L.marker(opt.coords,{icon:ic}).bindPopup(`<div style="font-family:system-ui"><strong>${opt.emoji} ${opt.name.split('—')[0].trim()}</strong></div>`,{maxWidth:200}).addTo(map));
+  });
+  mapLayers.push(hotelMarker([63.419,-19.006],'Vík — D6 end').addTo(map));
+  map.setView([64.0,-21.0],7);
 }
 
 function focusStop(lat,lng){map.setView([lat,lng],13);}
@@ -821,8 +537,8 @@ function renderVibes(vibes){
 }
 
 function renderDayContent(key){
-  const d=PD()[key];
-  const ln=PN()[key];
+  const d=DAYS[key];
+  const ln=DAY_LOVE_NOTES[key];
   const fClasses={easy:'feas-easy',full:'feas-full',tight:'feas-tight'};
   return `
     ${ln?`<div class="couple-card" style="margin-bottom:.85rem">
@@ -836,13 +552,11 @@ function renderDayContent(key){
     <div class="day-title">${d.title}</div>
     <div class="day-subtitle">${d.subtitle}</div>
     <div class="day-meta"><span class="meta-chip">🛣️ ${d.km}</span><span class="meta-chip">⏱️ ${d.drive}</span><span class="meta-chip">🌙 ${d.night}</span></div>
-
     ${d.feasibility?`
     <div class="feasibility ${fClasses[d.feasibility.level]||'feas-full'}">
       <div class="icon">⏱</div>
-      <p><strong>${d.feasibility.label}</strong>${d.feasibility.note}</p>
+      <p><strong>${d.feasibility.label}</strong> — ${d.feasibility.note}</p>
     </div>`:''}
-
     <div style="margin-top:.75rem">
       ${d.stops.map((s,i)=>`
         <div class="stop-card" style="--stop-color:${d.color}" onclick="focusStop(${s.coords[0]},${s.coords[1]})">
@@ -857,7 +571,6 @@ function renderDayContent(key){
         </div>
       `).join('')}
     </div>
-
     ${d.restaurants&&d.restaurants.length?`
     <details class="collapsible resto">
       <summary>🍽️ Where to Eat <span style="font-weight:400;font-size:.72rem;opacity:.6;margin-left:.4rem">${d.restaurants.length} options</span></summary>
@@ -872,7 +585,6 @@ function renderDayContent(key){
         `).join('')}
       </div>
     </details>`:''}
-
     ${d.hotels&&d.hotels.length?`
     <details class="collapsible night" style="margin-top:.6rem">
       <summary>🌙 Where to Stay — ${d.night}</summary>
@@ -888,51 +600,88 @@ function renderDayContent(key){
   `;
 }
 
+function renderChoiceDay(){
+  const ln=DAY_LOVE_NOTES.choose;
+  return `
+    <div class="couple-card" style="margin-bottom:.85rem">
+      <div class="couple-avatar">${ln.emoji}</div>
+      <div class="couple-card-text">
+        <h3>Luc ♥ Fahad · Days 7–10</h3>
+        <p>${ln.note}</p>
+      </div>
+    </div>
+    <div class="day-badge" style="color:#c084fc">DAYS 7–10</div>
+    <div class="day-title">Your 4-Day Chill Base</div>
+    <div class="day-subtitle">You pick the place. We built three options below.</div>
+    <div class="day-meta" style="margin-bottom:.8rem"><span class="meta-chip">🌙 4 nights</span><span class="meta-chip">🔓 No agenda</span><span class="meta-chip">📍 TBD</span></div>
+    <div class="choice-intro">
+      After 6 days of moving — Reykjavik, Þórsmörk, Vík — you deserve to <strong>stay in one place and actually breathe</strong>. Four days, same room, no checkout stress. The question is where. Three options below, each with a different vibe. Map shows all three with dashed routes from Vík.
+    </div>
+    ${CHILL_OPTIONS.map(opt=>`
+    <div class="option-card ${opt.id==='hofn'?'recommended':opt.id==='snaefellsnes'?'b':'c'}">
+      <div class="option-header">
+        <div class="option-title">${opt.emoji} ${opt.name}</div>
+        <span class="option-badge ${opt.badgeClass}">${opt.badge}</span>
+      </div>
+      <p style="font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:.6rem">${opt.tagline}</p>
+      <div class="option-meta">
+        ${opt.chips.map(c=>`<span class="option-chip">${c}</span>`).join('')}
+      </div>
+      <div class="option-desc">${opt.desc}</div>
+      <ul class="option-pros">
+        ${opt.pros.map(p=>`<li><strong>${p.t}:</strong> ${p.d}</li>`).join('')}
+      </ul>
+      <div class="option-warn">${opt.warn}</div>
+      <details class="collapsible night" style="margin-top:.7rem">
+        <summary>🌙 Where to Stay</summary>
+        <div class="collapsible-body">
+          ${opt.hotels.map(h=>`
+            <div class="hotel-row">
+              <div class="hotel-name">${h.name}</div>
+              <div class="hotel-meta"><span class="hotel-type">${h.type}</span><span class="hotel-price">${h.price}</span></div>
+            </div>
+          `).join('')}
+        </div>
+      </details>
+    </div>
+    `).join('')}
+    <div class="tip-box" style="margin-top:.5rem">
+      <strong>💡 Our read:</strong> If you love dramatic nature and good food, <strong>Höfn</strong>. If you want the most romantic and visually stunning, <strong>Snæfellsnes</strong>. If you want pure rest with no agenda and easy logistics, <strong>Hella farmstay</strong>. Tell us which speaks to you and we'll fill in the details.
+    </div>
+  `;
+}
+
 function renderOverview(){
   const fDot={easy:'#4ade80',full:'#fbbf24',tight:'#fb923c'};
-  const list7=[
-    {key:'day1',col:'#ff6b6b',km:'~50 km',stops:'KEF · Blue Lagoon · Hallgrímskirkja'},
-    {key:'day2',col:'#fbbf24',km:'~230 km',stops:'Þingvellir · Geysir · Gullfoss'},
-    {key:'day3',col:'#4ade80',km:'~165 km',stops:'Seljalandsfoss · Skógafoss · Seljavallalaug · Vík'},
-    {key:'day4',col:'#38bdf8',km:'~280 km',stops:'Canyon · Glacier Walk · Jökulsárlón · Höfn'},
-    {key:'day5',col:'#fb923c',km:'~380 km',stops:'Eldhraun · Lava Fields · Selfoss'},
-    {key:'day6',col:'#c084fc',km:'~360 km',stops:'Arnarstapi · Snæfellsjökull · Lysuhólslaug · Kirkjufell'},
-    {key:'day7',col:'#ff6b6b',km:'~50 km',stops:'Sundhollin · Brauð & Co · KEF'},
+  const list=[
+    {key:'day1',col:'#ff6b6b',km:'~50 km',stops:'KEF · Blue Lagoon · Hallgrímskirkja · Harbour'},
+    {key:'day2',col:'#fbbf24',km:'~15 km',stops:'Reykjavik pools · Laugavegur · Golden hour'},
+    {key:'day3',col:'#4ade80',km:'~150 km',stops:'Hvolsvöllur · Super-jeep · Þórsmörk · Gorge'},
+    {key:'day4',col:'#38bdf8',km:'~15 km',stops:'Þórsmörk free day · Valahnúkur · Hot tub'},
+    {key:'day5',col:'#c084fc',km:'~180 km',stops:'Seljalandsfoss · Skógafoss · Seljavallalaug · Vík'},
+    {key:'day6',col:'#fb923c',km:'~90 km',stops:'Reynisfjara · Fjaðrárgljúfur Canyon · Midnight beach'},
+    {key:'choose',col:'#c084fc',km:'4 nights',stops:'Choose: Höfn · Snæfellsnes · or Hella farmstay'},
   ];
-  const list10=[
-    {key:'day1',col:'#ff6b6b',km:'~50 km',stops:'KEF · Blue Lagoon · Hallgrímskirkja'},
-    {key:'day2',col:'#fbbf24',km:'~230 km',stops:'Þingvellir · Geysir · Gullfoss'},
-    {key:'day3',col:'#4ade80',km:'~165 km',stops:'Seljalandsfoss · Skógafoss · Seljavallalaug · Vík'},
-    {key:'day4',col:'#38bdf8',km:'~280 km',stops:'Canyon · Glacier Walk · Jökulsárlón · Höfn'},
-    {key:'day5',col:'#fb923c',km:'~260 km',stops:'Djúpivogur · East Fjords · Seyðisfjörður · Egilsstaðir'},
-    {key:'day6',col:'#4ade80',km:'~200 km',stops:'Goðafoss · Dimmuborgir · Hverir · Mývatn Baths'},
-    {key:'day7',col:'#38bdf8',km:'~145 km',stops:'Húsavík Whale Watching · Akureyri'},
-    {key:'day8',col:'#c084fc',km:'~260 km',stops:'Seal Coast · Borgarnes — short day, early night'},
-    {key:'day9',col:'#fbbf24',km:'~310 km',stops:'Arnarstapi · Snæfellsjökull · Lysuhólslaug · Kirkjufell · Reykjavik'},
-    {key:'day10',col:'#ff6b6b',km:'~50 km',stops:'Sundhollin · Brauð & Co · KEF → LYS'},
-  ];
-  const list=activePlan==='7'?list7:list10;
-  const totalKm=activePlan==='7'?'~1,620 km':'~2,100 km';
-  const planLabel=activePlan==='7'?'7 days · Southern Ring Road':'10 days · Full Ring Road · May 15–24';
   return `
     <div class="day-badge">OVERVIEW</div>
     <div class="day-title">Luc & Fahad · Iceland · May 2026</div>
-    <div class="day-subtitle">${totalKm} · ${planLabel}</div>
-    <div class="day-meta" style="margin-bottom:1rem"><span class="meta-chip">🚗 Rental car</span><span class="meta-chip">🌤️ 5–14°C</span><span class="meta-chip">☀️ 20–22h daylight</span></div>
+    <div class="day-subtitle">10 days · 2 Reykjavik · 2 Þórsmörk · 2 Vík · 4 Chill</div>
+    <div class="day-meta" style="margin-bottom:1rem"><span class="meta-chip">🚗 Rental car</span><span class="meta-chip">🌤️ 5–14°C</span><span class="meta-chip">☀️ 20–22h daylight</span><span class="meta-chip">🏨 4 places to book</span></div>
     <div class="overview-intro">
-      <strong>Why May:</strong> Near-midnight sun (sunset ~11pm — golden hour never ends), purple lupins blooming across lava fields, puffins on the cliffs, fewer crowds. The best month to visit Iceland.<br><br>
-      ${activePlan==='10'?`<strong>10-day philosophy:</strong> This isn't a sprint. Sleep in. Linger at the waterfall. Skip a stop if you're not feeling it. Have a second coffee. The 7-day plan is a highlight reel — this one is a proper road trip. Average 220 km/day vs 230 km in the 7-day plan, but with half the pressure.<br><br>`:''}
-      <strong>Iceland for you two:</strong> Top 3 most LGBT+ friendly country in the world. Show affection freely — capital, countryside, remote farms, everywhere. As normal as it gets. See 🏳️‍🌈 for details.
+      <strong>The philosophy:</strong> Base camps, not daily moves. You book 4 accommodations total — Reykjavik, Þórsmörk, Vík, and one final chill base. Wake up in the same place. Leave your bags. Go exploring. Come home.<br><br>
+      <strong>Þórsmörk is the highlight:</strong> A glacially carved highland valley accessible only by super-jeep. Three glaciers. Birch forests. Almost no tourists. Book the shuttle ahead — it fills up.<br><br>
+      <strong>The 4 chill days:</strong> The last tab (D7–10) presents three options. We haven't chosen yet — that's the conversation to have.<br><br>
+      <strong>Iceland for you two:</strong> Top 3 most LGBT+ friendly country in the world. Show affection freely everywhere — cities, farms, remote valleys. See 🏳️‍🌈 for details.
     </div>
     <div>
       ${list.map((d,i)=>{
-        const day=PD()[d.key];
-        const dotCol=fDot[day.feasibility?.level]||'#94a3b8';
+        const day=DAYS[d.key];
+        const dotCol=day?fDot[day.feasibility?.level]||'#94a3b8':'#c084fc';
         return `
         <div class="day-overview-card" onclick="switchTab('${d.key}')" style="border-left:4px solid ${d.col}">
-          <div class="day-num" style="background:${d.col}20;color:${d.col}">${i+1}</div>
+          <div class="day-num" style="background:${d.col}20;color:${d.col}">${i<6?i+1:'?'}</div>
           <div class="day-ov-info">
-            <h3>${day.title}</h3>
+            <h3>${day?day.title:'D7–10 · Choose Your Chill Base'}</h3>
             <p>${d.stops}</p>
           </div>
           <div class="drive-info">
@@ -941,7 +690,8 @@ function renderOverview(){
               <div class="feas-dot" style="background:${dotCol}"></div>
             </div>
           </div>
-        </div>`}).join('')}
+        </div>`;
+      }).join('')}
     </div>
     <div style="margin-top:1rem;font-size:.73rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap">
       <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80;margin-right:.3rem"></span>Easy</span>
@@ -957,16 +707,22 @@ function renderTips(){
       <li>Book <strong>6–8 weeks in advance</strong> — May has high demand</li>
       <li><strong>Blue Car Rental, Hertz, Lagoon</strong> — most reliable at KEF</li>
       <li>Always take <strong>SCDW + Gravel Insurance</strong> — gravel damage is very common</li>
-      <li>A regular car is fine for the Ring Road in May — no 4x4 needed</li>
-      <li>Fill up whenever you see a station — they're rare in the east</li></ul></div>
+      <li>A regular 2WD is fine for all stops in this plan</li>
+      <li>Park at Hvolsvöllur for Þórsmörk — no rental car can cross the rivers</li></ul></div>
+    <div class="tip-card"><h3>🏔️ Þórsmörk Transport</h3><ul>
+      <li><strong>Super-jeep shuttle</strong> from Hvolsvöllur — daily in summer, ~€25/person each way</li>
+      <li>Book with Þórsmörk Adventures or Highland Adventures</li>
+      <li><strong>Reykjavik Excursions</strong> bus-jeep direct from BSÍ terminal — book at re.is</li>
+      <li>Book both directions ahead — return shuttle fills fast</li>
+      <li>Leave bags in the car at Hvolsvöllur — bring a daypack to the valley</li></ul></div>
     <div class="tip-card"><h3>🌤️ Weather & Kit</h3><ul>
       <li>5–14°C — pack for 0°C at night</li>
       <li><strong>Waterproof windproof jacket is essential</strong> — wind triples the cold</li>
       <li>Layering: thermal base + fleece + waterproof shell</li>
-      <li><strong>Waterproof shoes</strong> — not regular trainers</li>
-      <li>Suncream even when overcast — UV reflects off snow</li></ul></div>
+      <li><strong>Waterproof trail shoes</strong> — essential for Þórsmörk trails</li>
+      <li>Suncream even when overcast — UV reflects off snow and glaciers</li></ul></div>
     <div class="tip-card"><h3>💰 Money</h3><ul>
-      <li>Card accepted <strong>everywhere</strong></li>
+      <li>Card accepted <strong>everywhere</strong> — no cash needed</li>
       <li>ISK: <strong>€1 ≈ 150 ISK</strong></li>
       <li>Alcohol very expensive in town — <strong>buy at KEF duty free on arrival</strong></li>
       <li><strong>Bónus</strong> (yellow supermarket) = cheapest for groceries</li>
@@ -977,67 +733,61 @@ function renderTips(){
       <li><strong>112 Iceland</strong> — safety registration + GPS rescue</li>
       <li><strong>Maps.me</strong> — offline maps for dead zones</li>
       <li>Download offline maps before leaving France</li></ul></div>
-    <div class="tip-card"><h3>🌅 Light & Photography</h3><ul>
-      <li>Sunset <strong>around 11pm</strong> in May — golden hour is eternal</li>
-      <li>No northern lights (too bright) — midnight sun is the trade-off</li>
-      <li>Tripod for waterfall long exposures</li>
-      <li><strong>Purple lupins</strong> start late May — landscapes become painterly</li>
-      <li>Puffins on cliffs at Dyrhólaey and Snæfellsnes from May</li></ul></div>
     <div class="tip-card"><h3>🦺 Safety</h3><ul>
       <li>Register at <strong>safetravel.is</strong> before you go</li>
-      <li>Check <strong>road.is</strong> every morning</li>
+      <li>Check <strong>road.is</strong> every morning for F-road status</li>
       <li><strong>NEVER</strong> turn your back to the ocean on black beaches</li>
-      <li>Sneaker waves are real and have killed people</li>
+      <li>Sneaker waves at Reynisfjara are deadly — stay well back</li>
       <li>Don't walk on lava moss — decades to regrow</li>
       <li>Emergency: <strong>112</strong></li></ul></div>
     <div class="tip-card"><h3>🍽️ Food</h3><ul>
-      <li><strong>Lobster soup</strong> at Sægreifinn — iconic</li>
+      <li><strong>Lobster soup</strong> at Sægreifinn (Reykjavik) — iconic</li>
       <li><strong>Icelandic lamb</strong> — free-range, order everywhere</li>
       <li><strong>Skyr</strong> — thick cultured dairy, grab in supermarkets</li>
-      <li><strong>Hot dog</strong> at Bæjarins Beztu — Obama approved</li>
-      <li><strong>Höfn langoustine</strong> — non-negotiable on Day 4</li>
+      <li><strong>Brauð & Co</strong> — best bakery in Iceland (Reykjavik)</li>
+      <li>Höfn langoustines — if you choose that option</li>
       <li>Geothermal rye bread — baked underground in volcanic heat</li></ul></div>
-    <div class="tip-card"><h3>🏨 Accommodation</h3><ul>
-      <li>Book <strong>everything in advance</strong> — May fills fast</li>
-      <li>Booking.com and Airbnb have the best coverage</li>
-      <li><strong>Farm guesthouses</strong> are often more authentic than hotels</li>
-      <li>Camping is cold and windy in May — not recommended</li>
-      <li>Priority: car → Blue Lagoon → accommodation → glacier walk</li></ul></div>
+    <div class="tip-card"><h3>🏨 Book in This Order</h3><ul>
+      <li>1. <strong>Rental car at KEF</strong></li>
+      <li>2. <strong>Blue Lagoon</strong> (bluelagoon.com)</li>
+      <li>3. <strong>Volcano Huts Þórsmörk</strong> — fills fast</li>
+      <li>4. <strong>Þórsmörk shuttle</strong> (both ways)</li>
+      <li>5. <strong>All other accommodation</strong></li>
+      <li>6. Decide your chill base</li></ul></div>
   </div></div>`;
 }
 
 function renderBudget(){
   const rows=[
-    ['✈️ Flights','Paris CDG ↔ Reykjavik return (×2)','€400–900'],
-    ['🚗 Car Rental','7 days + SCDW + Gravel Insurance','€700–1,100'],
-    ['⛽ Petrol','~1,620 km × 12L/100 × €2.20/L','~€430'],
-    ['🏨 Accommodation','7 nights × avg €130','€900–1,400'],
-    ['🍽️ Restaurants','2 meals/day × ~€35/person','€700–1,000'],
+    ['✈️ Flights','Lyon CDG ↔ Reykjavik return (×2)','€400–900'],
+    ['🚗 Car Rental','10 days + SCDW + Gravel Insurance','€900–1,400'],
+    ['⛽ Petrol','~500 km × 12L/100 × €2.20/L','~€130'],
+    ['🏨 Accommodation','4 bases × avg 2–3 nights × €140','€1,100–1,800'],
+    ['🍽️ Restaurants','2 meals/day × ~€35/person','€1,000–1,400'],
     ['🌊 Blue Lagoon','Comfort Package ×2','€130–200'],
-    ['🧊 Glacier Walk','Guide + gear ×2','€140–180'],
-    ['🚤 Jökulsárlón Boat','Amphibious tour ×2','€80–100'],
-    ['🎫 Activities','Silfra optional, museum entries…','€50–300'],
-    ['🛒 Supermarket','Bónus + picnics','€100–150'],
+    ['🏔️ Þórsmörk shuttle','Return × 2 people','€100–140'],
+    ['🎫 Activities','Pool entries, tower, optional extras','€80–200'],
+    ['🛒 Supermarket','Bónus + picnics','€100–160'],
     ['🍾 Duty Free','Brennivín, local beers','€50–100'],
     ['🎁 Souvenirs','Lopapeysa, design…','€50–200'],
   ];
-  return `<div class="section-wrap"><div class="section-title">💰 Estimated Budget — 7 Days, 2 People</div>
+  return `<div class="section-wrap"><div class="section-title">💰 Estimated Budget — 10 Days, 2 People</div>
     <div class="budget-card"><table class="budget-table">
       <thead><tr><th>Item</th><th>Detail</th><th>For 2</th></tr></thead>
       <tbody>
         ${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="amount">${r[2]}</td></tr>`).join('')}
-        <tr class="total-row"><td>💰 TOTAL</td><td>Reasonable → comfortable</td><td class="amount">€3,730 → €6,160</td></tr>
-        <tr class="total-row"><td>👤 PER PERSON</td><td></td><td class="amount">€1,865 → €3,080</td></tr>
+        <tr class="total-row"><td>💰 TOTAL</td><td>Reasonable → comfortable</td><td class="amount">€4,040 → €6,630</td></tr>
+        <tr class="total-row"><td>👤 PER PERSON</td><td></td><td class="amount">€2,020 → €3,315</td></tr>
       </tbody>
     </table></div>
     <div class="tip-box">
       <strong>💡 Save money:</strong><br>
-      → Airbnb instead of hotels: <strong>−€200</strong> · Picnic every lunch: <strong>−€250</strong> · Skip boat tour: <strong>−€100</strong> · Flights 3+ months ahead: <strong>−€200</strong><br>
-      <strong>Tight budget (no flights): ~€2,500 for two.</strong>
+      → Airbnb instead of hotels: <strong>−€300</strong> · Picnic every lunch: <strong>−€350</strong> · Flights 3+ months ahead: <strong>−€200</strong><br>
+      <strong>Tight budget (no flights): ~€2,700 for two. Comfortable: ~€4,500.</strong>
     </div>
     <div class="tip-box" style="margin-top:.75rem">
-      <strong>🔖 Book in this order — do it now:</strong><br>
-      1. Rental car at KEF &nbsp;·&nbsp; 2. Blue Lagoon &nbsp;·&nbsp; 3. All accommodation &nbsp;·&nbsp; 4. Glacier Walk (Day 4) &nbsp;·&nbsp; 5. Silfra snorkelling (Day 2, optional)
+      <strong>🔖 Book this — NOW — before anything else:</strong><br>
+      1. Rental car at KEF &nbsp;·&nbsp; 2. Blue Lagoon &nbsp;·&nbsp; 3. Volcano Huts Þórsmörk &nbsp;·&nbsp; 4. Þórsmörk shuttle (return) &nbsp;·&nbsp; 5. Reykjavik accommodation
     </div>
   </div>`;
 }
@@ -1064,14 +814,14 @@ function renderLGBT(){
         <li><strong>Reykjavik Pride</strong> = early August, 100,000+ attendees</li></ul></div>
       <div class="tip-card"><h3>🌍 Outside Reykjavik</h3><ul>
         <li>Rural Iceland is equally tolerant — no distinction</li>
-        <li>All hotels and guesthouses welcome gay couples</li>
-        <li>PDA (hands, kissing): totally normal anywhere</li>
+        <li>All hotels, guesthouses and mountain huts welcome gay couples</li>
+        <li>PDA (hands, kissing): totally normal anywhere, including Þórsmörk</li>
         <li>Zero reported homophobic incidents in tourist data</li></ul></div>
       <div class="tip-card"><h3>🛁 Pools & Spas</h3><ul>
         <li>Nude shower mandatory before entering water — the law</li>
         <li>Completely relaxed, unselfconscious atmosphere</li>
         <li>Blue Lagoon: very international, very open</li>
-        <li>Sundhollin: authentic local experience, zero judgment</li></ul></div>
+        <li>Laugardalslaug: authentic local pool, zero judgment</li></ul></div>
       <div class="tip-card"><h3>✅ Bottom Line</h3><ul>
         <li>Top 3 globally for LGBT+ safety and acceptance</li>
         <li>Zero special precautions needed</li>
@@ -1086,23 +836,24 @@ function renderLGBT(){
 //  TAB SWITCHING
 // ═══════════════════════════════════════════════
 const FULLWIDTH=['tips','budget','lgbt'];
-const TABS7=[
-  {k:'overview',l:'🗺️ Overview'},{k:'day1',l:'D1 · Arrival'},{k:'day2',l:'D2 · Golden Circle'},
-  {k:'day3',l:'D3 · South Coast'},{k:'day4',l:'D4 · Glaciers'},{k:'day5',l:'D5 · Drive Back'},
-  {k:'day6',l:'D6 · Snæfellsnes'},{k:'day7',l:'D7 · Departure'},
-  {k:'tips',l:'💡 Tips'},{k:'budget',l:'💰 Budget'},{k:'lgbt',l:'🏳️‍🌈 LGBT+'},
-];
-const TABS10=[
-  {k:'overview',l:'🗺️ Overview'},{k:'day1',l:'D1 · Arrival'},{k:'day2',l:'D2 · Golden Circle'},
-  {k:'day3',l:'D3 · South Coast'},{k:'day4',l:'D4 · Glaciers'},{k:'day5',l:'D5 · East Fjords'},
-  {k:'day6',l:'D6 · Mývatn'},{k:'day7',l:'D7 · Húsavík'},{k:'day8',l:'D8 · Drive West'},
-  {k:'day9',l:'D9 · Snæfellsnes'},{k:'day10',l:'D10 · Departure'},
-  {k:'tips',l:'💡 Tips'},{k:'budget',l:'💰 Budget'},{k:'lgbt',l:'🏳️‍🌈 LGBT+'},
+const TABS=[
+  {k:'overview',l:'🗺️ Overview'},
+  {k:'day1',l:'D1 · Arrival'},
+  {k:'day2',l:'D2 · Reykjavik'},
+  {k:'day3',l:'D3 · Þórsmörk'},
+  {k:'day4',l:'D4 · Free Day'},
+  {k:'day5',l:'D5 · South → Vík'},
+  {k:'day6',l:'D6 · Vík'},
+  {k:'choose',l:'D7–10 · Chill Base ✦'},
+  {k:'tips',l:'💡 Tips'},
+  {k:'budget',l:'💰 Budget'},
+  {k:'lgbt',l:'🏳️‍🌈 LGBT+'},
 ];
 
+document.getElementById('mainTabs').innerHTML=TABS.map(t=>`<button class="tab-btn" onclick="switchTab('${t.k}')">${t.l}</button>`).join('');
+
 function switchTab(tab){
-  const tabs=activePlan==='7'?TABS7:TABS10;
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>{b.classList.toggle('active',tabs[i]&&tabs[i].k===tab);});
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{b.classList.toggle('active',TABS[i]&&TABS[i].k===tab);});
   const layout=document.getElementById('mainLayout'),sidebar=document.getElementById('sidebar'),mc=document.getElementById('mapContainer');
   if(FULLWIDTH.includes(tab)){
     layout.classList.add('fullwidth');mc.style.display='none';
@@ -1113,20 +864,13 @@ function switchTab(tab){
     layout.classList.remove('fullwidth');mc.style.display='block';
     setTimeout(()=>map.invalidateSize(),50);
     if(tab==='overview'){sidebar.innerHTML=renderOverview();drawOverview();}
+    else if(tab==='choose'){sidebar.innerHTML=renderChoiceDay();drawChoiceMap();}
     else{sidebar.innerHTML=renderDayContent(tab);drawDay(tab);}
   }
   sidebar.scrollTop=0;
 }
 
-function switchPlan(n){
-  activePlan=String(n);
-  document.querySelectorAll('.plan-btn').forEach(b=>b.classList.toggle('active',b.id==='pbtn'+n));
-  const tabs=activePlan==='7'?TABS7:TABS10;
-  document.getElementById('mainTabs').innerHTML=tabs.map(t=>`<button class="tab-btn" onclick="switchTab('${t.k}')">${t.l}</button>`).join('');
-  switchTab('overview');
-}
-
-switchPlan('7');
+switchTab('overview');
 </script>
 </body>
 </html>
